@@ -1,0 +1,26 @@
+.home {
+   display: grid;
+   gap: 1.25rem;
+   justify-items: center;
+   h1 {
+      font-size: 2rem;
+   }
+}
+
+.homeIntro p {
+   font-size: 1.2rem;
+   text-align: center;
+}
+
+.classicsListContainer {
+   display: grid;
+   gap: 0.7rem;
+   justify-items: center;
+}
+
+.classicsList {
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   gap: 1.3rem;
+}

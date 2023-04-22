@@ -1,0 +1,22 @@
+@use "../App.scss";
+
+.searchResult {
+   display: grid;
+   margin-top: 1.25rem;
+   gap: 1.25rem;
+}
+
+.book {
+   display: grid;
+   grid-template-columns: auto 1fr;
+   gap: 1.25rem;
+}
+
+.bookTitle {
+   display: inline-block;
+   font-size: 1.17rem;
+   font-family: App.$h-font;
+   &:hover {
+      text-decoration: underline;
+   }
+}

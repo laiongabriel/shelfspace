@@ -1,0 +1,10 @@
+.bookList {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1.25rem;
+   margin-top: 0.5rem;
+}
+
+.bookItem {
+   transition: 0.5s ease-out;
+}
