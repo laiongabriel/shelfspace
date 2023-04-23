@@ -15,6 +15,7 @@ function Image({ alt, src, width, height, className }: ImageProps) {
    function handleLoad(event: React.SyntheticEvent<HTMLImageElement>) {
       setSkeleton(false);
       event.currentTarget.style.opacity = "1";
+      event.currentTarget.style.height = "auto";
    }
 
    return (

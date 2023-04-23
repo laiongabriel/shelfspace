@@ -1,5 +1,15 @@
 @use "../App.scss";
 
+@mixin nav-links {
+   transition: 0.2s;
+   line-height: 55px;
+   color: App.$primary-color;
+   &:hover {
+      background-color: App.$primary-color;
+      color: #f4f1ea;
+   }
+}
+
 .header {
    position: fixed;
    z-index: 100;
@@ -35,20 +45,13 @@
    flex-wrap: wrap;
 
    li a {
+      @include nav-links;
       padding: 0 1rem;
-      transition: 0.2s;
-      color: App.$primary-color;
-      line-height: 55px;
-
-      &:hover {
-         background-color: App.$primary-color;
-         color: #f4f1ea;
-      }
    }
 }
 
 .headerRight {
-   gap: 1.25rem;
+   gap: 0.8rem;
    display: flex;
    align-items: center;
 }
@@ -84,5 +87,12 @@
       background-size: contain;
       width: 24px;
       height: 24px;
+   }
+}
+
+.profile {
+   a {
+      @include nav-links;
+      padding: 0 0.5rem;
    }
 }

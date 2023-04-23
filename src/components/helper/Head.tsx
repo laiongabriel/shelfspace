@@ -13,7 +13,7 @@ function Head({ title, description }: HeadProps) {
          ?.setAttribute("content", description || "");
    }, [description, title]);
 
-   return <></>;
+   return null;
 }
 
 export default Head;

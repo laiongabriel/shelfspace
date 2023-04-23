@@ -20,3 +20,17 @@ export interface UserBookList {
    image: string;
    author: string[];
 }
+
+export interface Author {
+   title: string;
+   description: string;
+   extract: string;
+   thumbnail: {
+      height: number;
+      width: number;
+      source: string;
+   };
+   originalimage: {
+      source: string;
+   };
+}

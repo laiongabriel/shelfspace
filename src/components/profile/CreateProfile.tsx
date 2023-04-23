@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/CreateProfile.module.scss";
+import styles from "../../styles/profile/CreateProfile.module.scss";
 import { useNavigate } from "react-router-dom";
 
 function CreateProfile() {
@@ -10,11 +10,10 @@ function CreateProfile() {
       e.preventDefault();
       localStorage.setItem("userName", value);
       navigate("/profile");
-      window.location.reload();
    }
 
    return (
-      <section>
+      <section className="animeUpDown">
          <h1>you don't exist yet</h1>
          <form onSubmit={handleSubmit} className={styles.nameForm}>
             <label htmlFor="name">how would you like to be called?</label>

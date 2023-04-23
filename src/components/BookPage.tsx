@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { UserBookList } from "../types/book";
 import useFetch from "../hooks/useFetch";
 import styles from "../styles/BookPage.module.scss";
@@ -59,7 +59,7 @@ function BookPage() {
    if (error) return <div>{error}</div>;
    if (book)
       return (
-         <section className={styles.bookPageContainer}>
+         <section className={`${styles.bookPageContainer} animeLeft`}>
             <Head title={book.volumeInfo.title} />
             <div className={styles.bookPageLeft}>
                <Image
@@ -67,7 +67,7 @@ function BookPage() {
                   alt={book.volumeInfo.title}
                   src={`https://books.google.com/books/publisher/content/images/frontcover/${book.id}?fife=w240-h345`}
                   width="228px"
-                  height="345px"
+                  height="350px"
                />
                <div className={styles.bookActions}>
                   {userName ? (
@@ -88,11 +88,25 @@ function BookPage() {
                      ? `${book.volumeInfo.title}: ${book.volumeInfo.subtitle}`
                      : book.volumeInfo.title}
                </h1>
-               <p>
+
+               <div>
                   by{" "}
-                  {book.volumeInfo.authors.map((author) => author).join(", ")}
+                  {book.volumeInfo.authors.map((author, index) => (
+                     <React.Fragment key={index}>
+                        <Link to={`/author/${author.replace(/\s+/g, "_")}`}>
+                           <span className={styles.authorName}>{author}</span>
+                        </Link>
+                        {index < book.volumeInfo.authors.length - 1 && ", "}
+                     </React.Fragment>
+                  ))}
+               </div>
+
+               <p>
+                  Published by {book.volumeInfo.publisher} in{" "}
+                  {book.volumeInfo.publishedDate.replace(/^(\d{4}).*$/, "$1")}
                </p>
                <p>{book.volumeInfo.pageCount} pages</p>
+               <h2>About this book</h2>
                <p
                   dangerouslySetInnerHTML={{
                      __html: book.volumeInfo.description,

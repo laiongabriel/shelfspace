@@ -14,16 +14,30 @@ function Header() {
       if (pathname !== "/search") setValue("");
    }, [pathname]);
 
+   function scrollToTop() {
+      window.scrollTo({
+         top: 0,
+         left: 0,
+         behavior: "smooth",
+      });
+   }
+
    return (
       <header className={styles.header}>
          <div className={`${styles.headerContent} container`}>
             <div className={styles.headerLeft}>
-               <Link to="/" className={styles.logo}></Link>
+               <Link
+                  to="/"
+                  className={styles.logo}
+                  onClick={scrollToTop}
+               ></Link>
 
                <nav>
                   <ul className={styles.navList}>
                      <li>
-                        <Link to="/">Home</Link>
+                        <Link to="/" onClick={scrollToTop}>
+                           Home
+                        </Link>
                      </li>
                      <li>
                         <Link to="/mybooks">My Books</Link>

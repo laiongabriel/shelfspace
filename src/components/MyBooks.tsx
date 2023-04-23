@@ -7,7 +7,7 @@ import Head from "./helper/Head";
 
 function MyBooks() {
    const [bookList, setBookList] = React.useState<UserBookList[] | null>(null);
-   const userName = window.localStorage.getItem("userName");
+   const userName = localStorage.getItem("userName");
    const localList = localStorage.getItem("userBookList");
 
    React.useEffect(() => {
@@ -21,7 +21,6 @@ function MyBooks() {
                `Are you sure you want to remove ${title} from your books?`
             )
          ) {
-            window.location.reload();
             const updatedList = bookList.filter((book) => book.id !== id);
             localStorage.setItem("userBookList", JSON.stringify(updatedList));
             setBookList(updatedList);
@@ -30,9 +29,9 @@ function MyBooks() {
    }
 
    return (
-      <section>
+      <section className="animeLeft">
          <Head title={userName ? `${userName}'s books` : "Your Books"} />
-         <h1>To read</h1>
+         <h1>You books</h1>
          {!userName ? (
             <p>create a profile to start adding books!</p>
          ) : bookList?.length ? (
@@ -44,7 +43,7 @@ function MyBooks() {
                            alt={book.title}
                            src={book.image}
                            width="128px"
-                           height="186px"
+                           height="199px"
                         />
                      </Link>
                      <button

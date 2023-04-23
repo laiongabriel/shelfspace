@@ -4,6 +4,15 @@ import { Link } from "react-router-dom";
 import Image from "./helper/Image";
 
 function Home() {
+   const bookList = [
+      "-vEgM9Ly3swC",
+      "RyGVAgAAQBAJ",
+      "pTL0oqK0zDQC",
+      "U5NhxE67JjMC",
+      "kotPYEqx7kMC",
+      "oaAA9jRq9kkC",
+   ];
+
    return (
       <section className={styles.home}>
          <Head title="Home" />
@@ -15,66 +24,18 @@ function Home() {
          <div className={styles.classicsListContainer}>
             <h1>Must-read classics that you might like...</h1>
             <ul className={styles.classicsList}>
-               <li>
-                  <Link to="/book/-vEgM9Ly3swC">
-                     <Image
-                        alt="Dracula"
-                        src="https://books.google.com/books/publisher/content/images/frontcover/-vEgM9Ly3swC?fife=w240-h345"
-                        width="150px"
-                        height="227.63px"
-                     />
-                  </Link>
-               </li>
-               <li>
-                  <Link to="/book/RyGVAgAAQBAJ">
-                     <Image
-                        alt="One Hundred Years of Solitude"
-                        src="https://books.google.com/books/publisher/content/images/frontcover/RyGVAgAAQBAJ?fife=w240-h345"
-                        width="150px"
-                        height="227.63px"
-                     />
-                  </Link>
-               </li>
-               <li>
-                  <Link to="/book/pTL0oqK0zDQC">
-                     <Image
-                        alt="Anna Karenina"
-                        src="https://books.google.com/books/publisher/content/images/frontcover/pTL0oqK0zDQC?fife=w240-h345"
-                        width="150px"
-                        height="227.63px"
-                     />
-                  </Link>
-               </li>
-               <li>
-                  <Link to="/book/U5NhxE67JjMC">
-                     <Image
-                        alt="Crime and Punishment"
-                        src="https://books.google.com/books/publisher/content/images/frontcover/U5NhxE67JjMC?fife=w240-h345"
-                        width="150px"
-                        height="227.63px"
-                     />
-                  </Link>
-               </li>
-               <li>
-                  <Link to="/book/VO8nDwAAQBAJ">
-                     <Image
-                        alt="1984"
-                        src="https://books.google.com/books/publisher/content/images/frontcover/VO8nDwAAQBAJ?fife=w240-h345"
-                        width="150px"
-                        height="227.63px"
-                     />
-                  </Link>
-               </li>
-               <li>
-                  <Link to="/book/oaAA9jRq9kkC">
-                     <Image
-                        alt="Pride and Prejudice"
-                        src="https://books.google.com/books/publisher/content/images/frontcover/oaAA9jRq9kkC?fife=w240-h345"
-                        width="150px"
-                        height="227.63px"
-                     />
-                  </Link>
-               </li>
+               {bookList.map((id) => (
+                  <li key={id}>
+                     <Link to={`/book/${id}`}>
+                        <Image
+                           alt=""
+                           src={`https://books.google.com/books/publisher/content/images/frontcover/${id}?fife=w512-h512`}
+                           width="150px"
+                           height="228px"
+                        />
+                     </Link>
+                  </li>
+               ))}
             </ul>
          </div>
       </section>
