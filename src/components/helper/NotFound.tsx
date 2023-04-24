@@ -1,12 +1,5 @@
 function NotFound() {
-   return (
-      <div
-         style={{ display: "grid", justifyContent: "center" }}
-         className="animeUpDown"
-      >
-         <img src="https://http.cat/404" alt="" />
-      </div>
-   );
+   return <h1>404 Not Found</h1>;
 }
 
 export default NotFound;

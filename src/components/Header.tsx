@@ -9,6 +9,7 @@ function Header() {
    const navigate = useNavigate();
    const { pathname } = useLocation();
    const userName = window.localStorage.getItem("userName");
+   const userPicture = window.localStorage.getItem("userPicture");
 
    React.useEffect(() => {
       if (pathname !== "/search") setValue("");
@@ -53,7 +54,7 @@ function Header() {
                <div className={styles.search}>
                   <input
                      type="text"
-                     placeholder="Search books"
+                     placeholder="Search for books or authors"
                      value={value}
                      onChange={({ target }) => setValue(target.value)}
                      onKeyDown={({ key }) =>
@@ -70,7 +71,15 @@ function Header() {
                </div>
                <div className={styles.profile}>
                   <Link to={userName ? "/profile" : "/createprofile"}>
-                     {userName || "Create profile"}
+                     {(userPicture && (
+                        <img
+                           className={styles.userPicture}
+                           src={userPicture}
+                           alt=""
+                        />
+                     )) ||
+                        userName ||
+                        "Create profile"}
                   </Link>
                </div>
             </div>

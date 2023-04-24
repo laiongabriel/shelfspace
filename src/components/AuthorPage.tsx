@@ -13,10 +13,6 @@ function AuthorPage() {
    const { request, bookList } = useFetch();
 
    React.useEffect(() => {
-      if (authorInfo) request("?q=", authorInfo.title, undefined);
-   }, [authorInfo, request]);
-
-   React.useEffect(() => {
       async function getAuthorInfo(authorName: string) {
          const response = await fetch(
             `https://en.wikipedia.org/api/rest_v1/page/summary/${authorName}`
@@ -26,6 +22,10 @@ function AuthorPage() {
       }
       if (authorName) getAuthorInfo(authorName);
    }, [authorName]);
+
+   React.useEffect(() => {
+      if (authorInfo) request("?q=", authorInfo.title, undefined);
+   }, [authorInfo, request]);
 
    if (!bookList || !authorInfo) return <div className="loading"></div>;
    if (authorInfo?.title === "Not found.") return <NotFound />;
@@ -45,9 +45,6 @@ function AuthorPage() {
                   )}
                   <div className={styles.authorDesc}>
                      <h1>{authorInfo.title}</h1>
-                     <span className={styles.authorTitle}>
-                        {authorInfo.description}
-                     </span>
                      <p>{authorInfo.extract}</p>
                   </div>
                </section>

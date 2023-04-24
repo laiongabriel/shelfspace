@@ -1,15 +1,5 @@
 @use "../App.scss";
 
-@mixin nav-links {
-   transition: 0.2s;
-   line-height: 55px;
-   color: App.$primary-color;
-   &:hover {
-      background-color: App.$primary-color;
-      color: #f4f1ea;
-   }
-}
-
 .header {
    position: fixed;
    z-index: 100;
@@ -45,8 +35,14 @@
    flex-wrap: wrap;
 
    li a {
-      @include nav-links;
+      transition: 0.2s;
+      line-height: 55px;
+      color: App.$primary-color;
       padding: 0 1rem;
+      &:hover {
+         background-color: App.$primary-color;
+         color: #f4f1ea;
+      }
    }
 }
 
@@ -91,8 +87,19 @@
 }
 
 .profile {
+   display: grid;
+   align-self: center;
    a {
-      @include nav-links;
+      color: App.$primary-color;
       padding: 0 0.5rem;
+      &:hover {
+         text-decoration: underline;
+      }
    }
+}
+
+.userPicture {
+   border-radius: 50%;
+   border: 1px solid #b8b8b8;
+   width: 34px;
 }

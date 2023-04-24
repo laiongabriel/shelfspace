@@ -63,7 +63,6 @@ function BookPage() {
             <Head title={book.volumeInfo.title} />
             <div className={styles.bookPageLeft}>
                <Image
-                  className={styles.bookImage}
                   alt={book.volumeInfo.title}
                   src={`https://books.google.com/books/publisher/content/images/frontcover/${book.id}?fife=w240-h345`}
                   width="228px"
@@ -77,7 +76,7 @@ function BookPage() {
                            : "Add to your books"}
                      </button>
                   ) : (
-                     <p>create a profile to start adding books!</p>
+                     <p>Create a profile to start adding books!</p>
                   )}
                </div>
             </div>
@@ -103,7 +102,7 @@ function BookPage() {
 
                <p>
                   Published by {book.volumeInfo.publisher} in{" "}
-                  {book.volumeInfo.publishedDate.replace(/^(\d{4}).*$/, "$1")}
+                  {book.volumeInfo.publishedDate?.replace(/^(\d{4}).*$/, "$1")}
                </p>
                <p>{book.volumeInfo.pageCount} pages</p>
                <h2>About this book</h2>

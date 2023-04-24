@@ -7,17 +7,17 @@
 }
 
 .homeIntro p {
-   font-size: 1.2rem;
+   font-size: 1.1rem;
    text-align: center;
 }
 
-.classicsListContainer {
+.mustReadListContainer {
    display: grid;
-   gap: 0.7rem;
+   gap: 1rem;
    justify-items: center;
 }
 
-.classicsList {
+.mustReadList {
    display: flex;
    justify-content: center;
    align-items: center;

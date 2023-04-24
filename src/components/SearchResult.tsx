@@ -10,7 +10,6 @@ function SearchResult() {
    const location = useLocation();
 
    React.useEffect(() => {
-      console.log(location.search);
       request(location.search);
    }, [location.search, request]);
 

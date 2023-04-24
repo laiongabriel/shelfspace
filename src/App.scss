@@ -44,11 +44,24 @@ a {
 
 img {
    display: block;
+   height: auto;
    max-width: 100%;
 }
 
+.userPicture {
+   width: 170px;
+   border-radius: 50%;
+   border: 1px solid #b8b8b8;
+}
+
+input::-webkit-file-upload-button {
+   font: inherit;
+}
+
 input,
+textarea,
 button {
+   display: block;
    font: inherit;
 }
 

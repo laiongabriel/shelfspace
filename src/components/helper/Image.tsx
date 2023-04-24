@@ -19,9 +19,10 @@ function Image({ alt, src, width, height, className }: ImageProps) {
    }
 
    return (
-      <div className={`${styles.wrapper} ${className}`}>
+      <div className={styles.wrapper}>
          {skeleton && <div className={styles.skeleton}></div>}
          <img
+            className={className}
             onLoad={handleLoad}
             src={src}
             alt={alt}

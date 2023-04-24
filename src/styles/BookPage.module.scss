@@ -1,13 +1,15 @@
 .bookPageContainer {
    display: grid;
-   grid-template-columns: auto 1fr;
+   grid-template-columns: minmax(auto, 228px) 1fr;
    gap: 2rem;
    margin-top: 0.5rem;
 }
 
-// .bookPageLeft {
-//    // ...
-// }
+.bookPageLeft {
+   button {
+      margin-top: 0.8rem;
+   }
+}
 
 .bookImage {
    margin-bottom: 1rem;

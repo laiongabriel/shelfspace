@@ -29,11 +29,16 @@ function MyBooks() {
    }
 
    return (
-      <section className="animeLeft">
-         <Head title={userName ? `${userName}'s books` : "Your Books"} />
+      <section className="animeUpDown">
+         <Head title="My Books" />
          <h1>You books</h1>
          {!userName ? (
-            <p>create a profile to start adding books!</p>
+            <p>
+               <Link to="/createprofile" className={styles.createProfileLink}>
+                  Create a profile
+               </Link>{" "}
+               to start adding books!
+            </p>
          ) : bookList?.length ? (
             <ul className={styles.bookList}>
                {bookList.map((book) => (
@@ -49,7 +54,7 @@ function MyBooks() {
                      <button
                         onClick={() => removeFromList(book.id, book.title)}
                      >
-                        remove
+                        Remove
                      </button>
                   </li>
                ))}

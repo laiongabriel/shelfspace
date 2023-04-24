@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Image from "./helper/Image";
 
 function Home() {
-   const bookList = [
+   const mustReadList = [
       "-vEgM9Ly3swC",
       "RyGVAgAAQBAJ",
       "pTL0oqK0zDQC",
@@ -21,10 +21,10 @@ function Home() {
             <p>A virtual bookshelf for book lovers.</p>
          </div>
 
-         <div className={styles.classicsListContainer}>
+         <div className={styles.mustReadListContainer}>
             <h1>Must-read classics that you might like...</h1>
-            <ul className={styles.classicsList}>
-               {bookList.map((id) => (
+            <ul className={styles.mustReadList}>
+               {mustReadList.map((id) => (
                   <li key={id}>
                      <Link to={`/book/${id}`}>
                         <Image
