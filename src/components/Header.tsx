@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "../styles/Header.module.scss";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import NoPicture from "../assets/img/no-picture.svg";
 
 function Header() {
    const [value, setValue] = React.useState("");
@@ -71,15 +72,21 @@ function Header() {
                </div>
                <div className={styles.profile}>
                   <Link to={userName ? "/profile" : "/createprofile"}>
-                     {(userPicture && (
+                     {userPicture ? (
                         <img
                            className={styles.userPicture}
                            src={userPicture}
                            alt=""
                         />
-                     )) ||
-                        userName ||
-                        "Create profile"}
+                     ) : userName ? (
+                        <img
+                           className={styles.userPicture}
+                           src={NoPicture}
+                           alt=""
+                        />
+                     ) : (
+                        "Create profile"
+                     )}
                   </Link>
                </div>
             </div>

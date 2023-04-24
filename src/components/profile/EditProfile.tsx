@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Head from "../helper/Head";
 import styles from "../../styles/profile/EditProfile.module.scss";
 import useCropPicture from "../../hooks/useCropPicture";
-import NotLoggedIn from "../../assets/img/not-logged-in.svg";
+import NoPicture from "../../assets/img/no-picture.svg";
 
 function EditProfile() {
    const [newUserName, setNewUserName] = React.useState("");
@@ -69,10 +69,12 @@ function EditProfile() {
 
          {!croppedPicture && userPicture ? (
             <img src={userPicture} alt="" className="userPicture" />
-         ) : !userPicture && croppedPicture.length ? (
+         ) : croppedPicture && !userPicture ? (
             <img src={croppedPicture} alt="" className="userPicture" />
+         ) : !croppedPicture && !userPicture ? (
+            <img src={NoPicture} alt="" className="noPicture" />
          ) : (
-            <img src={NotLoggedIn} alt="" className="userPicture" />
+            <img src={croppedPicture} alt="" className="userPicture" />
          )}
 
          <button disabled={!pictureExists} onClick={removePicture}>

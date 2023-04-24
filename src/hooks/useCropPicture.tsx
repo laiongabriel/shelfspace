@@ -19,13 +19,13 @@ function useCropPicture() {
                   img.onload = () => {
                      const canvas = document.createElement("canvas");
                      const ctx = canvas.getContext("2d");
-                     const size = Math.min(img.naturalWidth, img.naturalHeight);
+                     const size = Math.min(img.width, img.height);
                      canvas.width = size;
                      canvas.height = size;
                      ctx?.drawImage(
                         img,
-                        (img.naturalWidth - size) / 2,
-                        (img.naturalHeight - size) / 2,
+                        (img.width - size) / 2,
+                        (img.height - size) / 2,
                         size,
                         size,
                         0,

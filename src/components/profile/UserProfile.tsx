@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "../../styles/profile/UserProfile.module.scss";
 import Head from "../helper/Head";
 import React from "react";
-import MyBooks from "../MyBooks";
+import NoPicture from "../../assets/img/no-picture.svg";
 
 function UserProfile() {
    const navigate = useNavigate();
@@ -19,15 +19,15 @@ function UserProfile() {
          <Head title={userName ? `${userName}'s profile` : "Profile"} />
          <div>
             <h1>{userName}</h1>
-            {userPicture && (
+            {userPicture ? (
                <img className="userPicture" src={userPicture} alt="" />
+            ) : (
+               <img src={NoPicture} alt="" className="noPicture" />
             )}
             {userBio && <p>{userBio}</p>}
 
             <button onClick={() => navigate("edit")}>Edit profile</button>
          </div>
-
-         <MyBooks />
       </section>
    );
 }

@@ -51,7 +51,13 @@ img {
 .userPicture {
    width: 170px;
    border-radius: 50%;
-   border: 1px solid #b8b8b8;
+   border: 1px solid #d4d4d4;
+   transition: all 0.5s ease-out;
+}
+
+.noPicture {
+   background-color: #f4f1ea;
+   border-radius: 50%;
 }
 
 input::-webkit-file-upload-button {
