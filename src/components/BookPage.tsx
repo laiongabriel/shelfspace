@@ -68,7 +68,7 @@ function BookPage() {
             <div className={styles.bookPageLeft}>
                <Image
                   alt={book.volumeInfo.title}
-                  src={`https://books.google.com/books/publisher/content/images/frontcover/${book.id}?fife=w240-h345`}
+                  src={`https://books.google.com/books/publisher/content/images/frontcover/${book.id}?fife=w512-h512`}
                   width="228px"
                   height="350px"
                />

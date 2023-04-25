@@ -25,7 +25,7 @@ function SearchResult() {
                   <Link to={`/book/${book.id}`}>
                      <Image
                         alt={book.volumeInfo.title}
-                        src={`https://books.google.com/books/publisher/content/images/frontcover/${book.id}?fife=w128-h196`}
+                        src={`https://books.google.com/books/publisher/content/images/frontcover/${book.id}?fife=w512-h512`}
                         width="128px"
                         height="186px"
                      />

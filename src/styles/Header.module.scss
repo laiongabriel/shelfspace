@@ -1,5 +1,3 @@
-@use "../App.scss";
-
 .header {
    position: fixed;
    z-index: 100;
@@ -7,6 +5,7 @@
    left: 0;
    width: 100%;
    background-color: #f4f1ea;
+   border-bottom: 1px solid #e0e0e0;
 }
 
 .headerContent {
@@ -18,30 +17,30 @@
 .headerLeft {
    display: flex;
    align-items: center;
+   gap: 1rem;
 }
 
 .logo {
-   margin-right: 1rem;
    display: grid;
    align-items: center;
    position: relative;
    top: -1px;
-   height: 55px;
    width: 165px;
 }
 
 .navList {
    display: flex;
+   align-items: center;
    flex-wrap: wrap;
 
    li a {
       transition: 0.2s;
       line-height: 55px;
-      padding: 0 1rem;
+      padding: 1px 1rem 0;
       border-bottom: 2px solid transparent;
       &:hover {
-         border-bottom: 2px solid #d9cd9c;
-         color: #d9cd9c;
+         border-bottom: 2px solid #412918;
+         color: #412918;
       }
    }
 }
@@ -87,10 +86,10 @@
 }
 
 .profile {
-   display: grid;
-   justify-self: center;
    a {
-      color: App.$primary-color;
+      display: flex;
+      align-items: center;
+      gap: 10px;
       padding: 0 0.5rem;
       &:hover {
          text-decoration: underline;
@@ -98,7 +97,15 @@
    }
 }
 
+.noPicture {
+   background-color: #f5f4f1;
+   outline: 1px solid #e0e0e0;
+   border-radius: 50%;
+   width: 34px;
+}
+
 .userPicture {
+   border: 1px solid #e0e0e0;
    border-radius: 50%;
    width: 34px;
 }

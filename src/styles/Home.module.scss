@@ -2,24 +2,37 @@
 
 .home {
    display: grid;
-   gap: 1.25rem;
+   gap: 2.25rem;
    justify-items: center;
-}
-
-.homeIntro p {
    text-align: center;
 }
 
-.mustReadListContainer {
+.homeIntro {
+   margin-top: 1.15rem;
+}
+
+.classicsListContainer {
    display: grid;
    gap: 1rem;
    justify-items: center;
 }
 
-.mustReadList {
+.classicsList {
    display: flex;
-   justify-content: center;
-   align-items: center;
    flex-wrap: wrap;
-   gap: 1.3rem;
+   justify-content: center;
+   gap: 2rem;
+}
+
+.classicInfo {
+   width: 180px;
+   padding: 0.5rem;
+}
+
+.classicTitle {
+   font-size: 0.93rem;
+}
+
+.classicDate {
+   color: rgb(82, 82, 82);
 }

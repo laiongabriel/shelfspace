@@ -4,13 +4,37 @@ import { Link } from "react-router-dom";
 import Image from "./helper/Image";
 
 function Home() {
-   const mustReadList = [
-      "-vEgM9Ly3swC",
-      "RyGVAgAAQBAJ",
-      "pTL0oqK0zDQC",
-      "U5NhxE67JjMC",
-      "kotPYEqx7kMC",
-      "oaAA9jRq9kkC",
+   const classicsList = [
+      {
+         id: "-vEgM9Ly3swC",
+         title: "Dracula",
+         firstPublished: 1897,
+         author: "Bram Stoker",
+      },
+      {
+         id: "RyGVAgAAQBAJ",
+         title: "One Hundred Years of Solitude",
+         firstPublished: 1967,
+         author: "Gabriel Garcia Marquez",
+      },
+      {
+         id: "oaAA9jRq9kkC",
+         title: "Pride and Prejudice",
+         firstPublished: 1813,
+         author: "Jane Austen",
+      },
+      {
+         id: "U5NhxE67JjMC",
+         title: "Crime and Punishment",
+         firstPublished: 1866,
+         author: "Fyodor Dostoevsky",
+      },
+      {
+         id: "kotPYEqx7kMC",
+         title: "1984",
+         firstPublished: 1949,
+         author: "George Orwell",
+      },
    ];
 
    return (
@@ -18,22 +42,33 @@ function Home() {
          <Head title="Home" />
          <div className={styles.homeIntro}>
             <h1>Wellcome to ShelfSpace!</h1>
-            <p>A virtual bookshelf for book lovers.</p>
+            <p>
+               Your personal virtual bookshelf. Discover, organize and access
+               your favorite books.
+            </p>
          </div>
 
-         <div className={styles.mustReadListContainer}>
-            <h1>Must-read classics that you might like...</h1>
-            <ul className={styles.mustReadList}>
-               {mustReadList.map((id) => (
-                  <li key={id}>
-                     <Link to={`/book/${id}`}>
+         <div className={styles.classicsListContainer}>
+            <h1>World literature classics that you might enjoy...</h1>
+            <ul className={styles.classicsList}>
+               {classicsList.map((book) => (
+                  <li key={book.id} className={styles.classicItem}>
+                     <Link to={`/book/${book.id}`}>
                         <Image
-                           alt=""
-                           src={`https://books.google.com/books/publisher/content/images/frontcover/${id}?fife=w512-h512`}
-                           width="150px"
-                           height="228px"
+                           alt={book.title}
+                           src={`https://books.google.com/books/publisher/content/images/frontcover/${book.id}?fife=w512-h512`}
+                           width="180px"
+                           height="276px"
                         />
                      </Link>
+                     <div className={styles.classicInfo}>
+                        <p className={styles.classicTitle}>
+                           {book.title}{" "}
+                           <span className={styles.classicDate}>
+                              ({book.firstPublished})
+                           </span>
+                        </p>
+                     </div>
                   </li>
                ))}
             </ul>

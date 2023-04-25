@@ -8,14 +8,14 @@ import NoPicture from "../../assets/img/no-picture.svg";
 function EditProfile() {
    const [newUserName, setNewUserName] = React.useState("");
    const [newUserBio, setNewUserBio] = React.useState("");
+   const navigate = useNavigate();
    const {
       handleImageChange,
       croppedPicture,
       setCroppedPicture,
       pictureExists,
-      setPictureExits,
+      setPictureExists,
    } = useCropPicture();
-   const navigate = useNavigate();
 
    const userName = localStorage.getItem("userName");
    const userBio = localStorage.getItem("userBio");
@@ -23,12 +23,12 @@ function EditProfile() {
 
    React.useEffect(() => {
       if (!localStorage.getItem("userName")) navigate("/createprofile");
-      if (userPicture) setPictureExits(true);
-   }, [navigate, setPictureExits, userPicture]);
+      if (userPicture) setPictureExists(true);
+   }, [navigate, setPictureExists, userPicture]);
 
    function removePicture() {
       localStorage.removeItem("userPicture");
-      setPictureExits(false);
+      setPictureExists(false);
       setCroppedPicture("");
    }
 
@@ -63,19 +63,18 @@ function EditProfile() {
             id="bio"
             cols={50}
             rows={7}
+            maxLength={600}
             defaultValue={userBio ? userBio : ""}
             onChange={({ target }) => setNewUserBio(target.value)}
          ></textarea>
 
-         {!croppedPicture && userPicture ? (
-            <img src={userPicture} alt="" className="userPicture" />
-         ) : croppedPicture && !userPicture ? (
-            <img src={croppedPicture} alt="" className="userPicture" />
-         ) : !croppedPicture && !userPicture ? (
-            <img src={NoPicture} alt="" className="noPicture" />
-         ) : (
-            <img src={croppedPicture} alt="" className="userPicture" />
-         )}
+         <img
+            src={croppedPicture || userPicture || NoPicture}
+            alt={userName!}
+            className={
+               croppedPicture || userPicture ? "userPicture" : "noPicture"
+            }
+         />
 
          <button disabled={!pictureExists} onClick={removePicture}>
             remove picture

@@ -52,6 +52,7 @@ function CreateProfile() {
             <textarea
                cols={50}
                rows={7}
+               maxLength={600}
                onChange={({ target }) => setUserBio(target.value)}
             ></textarea>
             <button>let's go</button>

@@ -20,8 +20,6 @@ function Header() {
    function scrollToTop() {
       window.scrollTo({
          top: 0,
-         left: 0,
-         behavior: "smooth",
       });
    }
 
@@ -71,21 +69,21 @@ function Header() {
                </div>
                <div className={styles.profile}>
                   <Link to={userName ? "/profile" : "/createprofile"}>
-                     {userPicture ? (
-                        <img
-                           className={styles.userPicture}
-                           src={userPicture}
-                           alt=""
-                        />
-                     ) : userName ? (
-                        <img
-                           className={styles.userPicture}
-                           src={NoPicture}
-                           alt=""
-                        />
-                     ) : (
-                        "Create profile"
+                     {userName && (
+                        <>
+                           <img
+                              className={
+                                 userPicture
+                                    ? styles.userPicture
+                                    : styles.noPicture
+                              }
+                              src={userPicture || NoPicture}
+                              alt=""
+                           />
+                           <p>{userName}</p>
+                        </>
                      )}
+                     {!userName && "Create profile"}
                   </Link>
                </div>
             </div>
