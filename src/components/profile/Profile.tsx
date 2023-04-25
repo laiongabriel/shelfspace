@@ -5,13 +5,11 @@ import NotFound from "../helper/NotFound";
 
 function Profile() {
    return (
-      <section>
-         <Routes>
-            <Route path="/" element={<UserProfile />} />
-            <Route path="/edit" element={<EditProfile />} />
-            <Route path="*" element={<NotFound />} />
-         </Routes>
-      </section>
+      <Routes>
+         <Route path="/" element={<UserProfile />} />
+         <Route path="/edit" element={<EditProfile />} />
+         <Route path="*" element={<NotFound />} />
+      </Routes>
    );
 }
 

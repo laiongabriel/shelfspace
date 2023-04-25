@@ -60,7 +60,11 @@ function BookPage() {
    if (book)
       return (
          <section className={`${styles.bookPageContainer} animeLeft`}>
-            <Head title={book.volumeInfo.title} />
+            <Head
+               title={book.volumeInfo.title}
+               ogImage={book.volumeInfo.imageLinks.thumbnail}
+               description={`${book.volumeInfo.title} by ${book.volumeInfo.authors[0]} on ShelfSpace`}
+            />
             <div className={styles.bookPageLeft}>
                <Image
                   alt={book.volumeInfo.title}

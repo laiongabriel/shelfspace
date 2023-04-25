@@ -22,7 +22,7 @@ function UserProfile() {
             {userPicture ? (
                <img className="userPicture" src={userPicture} alt="" />
             ) : (
-               <img src={NoPicture} alt="" className="noPicture" />
+               <img src={NoPicture} alt={userName!} className="noPicture" />
             )}
             {userBio && <p>{userBio}</p>}
 

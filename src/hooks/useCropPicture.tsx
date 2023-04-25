@@ -20,8 +20,8 @@ function useCropPicture() {
                      const canvas = document.createElement("canvas");
                      const ctx = canvas.getContext("2d");
                      const size = Math.min(img.width, img.height);
-                     canvas.width = size;
-                     canvas.height = size;
+                     canvas.width = 170;
+                     canvas.height = 170;
                      ctx?.drawImage(
                         img,
                         (img.width - size) / 2,
@@ -30,8 +30,8 @@ function useCropPicture() {
                         size,
                         0,
                         0,
-                        size,
-                        size
+                        170,
+                        170
                      );
                      const croppedImage = canvas.toDataURL();
                      setPictureExits(true);

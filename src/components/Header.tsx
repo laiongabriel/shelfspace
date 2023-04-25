@@ -4,6 +4,7 @@ import styles from "../styles/Header.module.scss";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import NoPicture from "../assets/img/no-picture.svg";
+import Logo from "../assets/img/site-logo.svg";
 
 function Header() {
    const [value, setValue] = React.useState("");
@@ -28,11 +29,9 @@ function Header() {
       <header className={styles.header}>
          <div className={`${styles.headerContent} container`}>
             <div className={styles.headerLeft}>
-               <Link
-                  to="/"
-                  className={styles.logo}
-                  onClick={scrollToTop}
-               ></Link>
+               <Link to="/" onClick={scrollToTop}>
+                  <img src={Logo} alt="ShelfSpace" className={styles.logo} />
+               </Link>
 
                <nav>
                   <ul className={styles.navList}>

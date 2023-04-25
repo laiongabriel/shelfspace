@@ -6,7 +6,6 @@
    top: 0;
    left: 0;
    width: 100%;
-   box-shadow: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.15);
    background-color: #f4f1ea;
 }
 
@@ -23,11 +22,12 @@
 
 .logo {
    margin-right: 1rem;
+   display: grid;
+   align-items: center;
+   position: relative;
+   top: -1px;
    height: 55px;
-   width: 139px;
-   background: url("../assets/img/site-logo.svg") no-repeat;
-   background-position: center;
-   background-size: 139px 55px;
+   width: 165px;
 }
 
 .navList {
@@ -37,11 +37,11 @@
    li a {
       transition: 0.2s;
       line-height: 55px;
-      color: App.$primary-color;
       padding: 0 1rem;
+      border-bottom: 2px solid transparent;
       &:hover {
-         background-color: App.$primary-color;
-         color: #f4f1ea;
+         border-bottom: 2px solid #d9cd9c;
+         color: #d9cd9c;
       }
    }
 }
@@ -88,7 +88,7 @@
 
 .profile {
    display: grid;
-   align-self: center;
+   justify-self: center;
    a {
       color: App.$primary-color;
       padding: 0 0.5rem;

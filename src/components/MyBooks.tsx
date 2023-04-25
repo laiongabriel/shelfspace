@@ -16,14 +16,21 @@ function MyBooks() {
 
    function removeFromList(id: string, title: string) {
       if (bookList) {
+         const bookItem = document.getElementById(id);
          if (
             window.confirm(
                `Are you sure you want to remove ${title} from your books?`
             )
          ) {
-            const updatedList = bookList.filter((book) => book.id !== id);
-            localStorage.setItem("userBookList", JSON.stringify(updatedList));
-            setBookList(updatedList);
+            bookItem!.style.opacity = "0";
+            setTimeout(() => {
+               const updatedList = bookList.filter((book) => book.id !== id);
+               localStorage.setItem(
+                  "userBookList",
+                  JSON.stringify(updatedList)
+               );
+               setBookList(updatedList);
+            }, 400);
          }
       }
    }
@@ -42,7 +49,7 @@ function MyBooks() {
          ) : bookList?.length ? (
             <ul className={styles.bookList}>
                {bookList.map((book) => (
-                  <li key={book.id} className={styles.bookItem}>
+                  <li key={book.id} className={styles.bookItem} id={book.id}>
                      <Link to={`/book/${book.id}`}>
                         <Image
                            alt={book.title}
