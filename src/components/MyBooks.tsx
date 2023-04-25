@@ -37,7 +37,7 @@ function MyBooks() {
 
    return (
       <section className="animeUpDown">
-         <Head title="My Books | ShelfSpace" />
+         <Head title="My Books" />
          <h1>You books</h1>
          {!userName ? (
             <p>
