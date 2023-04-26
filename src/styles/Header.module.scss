@@ -10,28 +10,24 @@
 
 .headerContent {
    display: flex;
-   justify-content: space-between;
    align-items: center;
-}
-
-.headerLeft {
-   display: flex;
-   align-items: center;
-   gap: 1rem;
 }
 
 .logo {
-   display: grid;
-   align-items: center;
+   display: inline-block;
+   background: url("../assets/img/site-logo.svg") no-repeat;
    position: relative;
    top: -1px;
+   background-position: center;
+   background-size: 165px 58px;
+   height: 58px;
    width: 165px;
 }
 
 .navList {
    display: flex;
    align-items: center;
-   flex-wrap: wrap;
+   margin: 0 1rem;
 
    li a {
       transition: 0.2s;
@@ -45,43 +41,64 @@
    }
 }
 
-.headerRight {
-   gap: 0.8rem;
-   display: flex;
-   align-items: center;
-}
-
 .search {
-   display: flex;
-   align-items: center;
-   width: 25rem;
    position: relative;
+   margin-right: 1rem;
+   flex: 1;
 
-   input {
-      font-size: 0.9rem;
-      border: #dcd6cc 1px solid;
-      border-radius: 4px;
-      background-color: #ffffff;
-      color: #333;
-      outline: none;
-      padding: 6px 32px 6px 10px;
-      width: 100%;
-      transition: 0.2s;
+   form {
+      display: flex;
+      position: relative;
+      flex: 1;
 
-      &:focus {
-         box-shadow: 0 0 0.4rem rgba(185, 173, 153, 0.5);
+      input {
+         width: 100%;
+         font-size: 0.9rem;
+         border: 1px solid #dcd6cc;
+         border-radius: 4px;
+         background-color: #ffffff;
+         color: #333;
+         outline: none;
+         padding: 6px 32px 6px 10px;
+         transition: 0.2s;
+
+         &:focus {
+            box-shadow: 0 0 0.4rem rgba(185, 173, 153, 0.5);
+         }
+      }
+
+      button {
+         cursor: pointer;
+         position: absolute;
+         right: 5px;
+         top: 6px;
+         border: none;
+         background: url("../assets/img/search-icon.svg") no-repeat;
+         background-size: contain;
+         width: 24px;
+         height: 24px;
       }
    }
 
-   button {
-      cursor: pointer;
+   .searchResult {
       position: absolute;
-      right: 5px;
-      border: none;
-      background: url("../assets/img/search-icon.svg") no-repeat;
-      background-size: contain;
-      width: 24px;
-      height: 24px;
+      z-index: 999;
+      width: 100%;
+      border-radius: 4px;
+
+      background-color: #ffffff;
+      border: 1px solid #dcd6cc;
+   }
+
+   .searchResultItem {
+      display: flex;
+      gap: 0.6rem;
+      padding: 8px 8px 8px 10px;
+      border-bottom: 1px solid #dcd6cc;
+      width: 100%;
+      &:hover {
+         background-color: #f4f1ea;
+      }
    }
 }
 

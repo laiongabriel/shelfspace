@@ -8,6 +8,7 @@ import Head from "./helper/Head";
 function SearchResult() {
    const { bookList, loading, error, request } = useFetch();
    const location = useLocation();
+   console.log(location);
 
    React.useEffect(() => {
       request(location.search);

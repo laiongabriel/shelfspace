@@ -9,13 +9,14 @@ function useFetch() {
 
    const request = React.useCallback(
       async (value?: string, author?: string, bookId?: string) => {
+         console.log(value);
          const baseUrl = "https://www.googleapis.com/books/v1/volumes";
          let finalUrl;
 
          if (author) {
             finalUrl = `${
                baseUrl + value
-            }+inauthor:${author}&filter=ebooks&maxResults=14`;
+            }+inauthor:${author}&filter=ebooks&maxResults=15`;
          } else if (bookId) {
             finalUrl = `${baseUrl}/${bookId}`;
          } else finalUrl = `${baseUrl + value}&filter=ebooks&maxResults=15`;
@@ -53,6 +54,7 @@ function useFetch() {
       bookList,
       error,
       loading,
+      setBookList,
       request,
    };
 }
