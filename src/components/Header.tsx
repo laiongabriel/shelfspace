@@ -23,9 +23,7 @@ function Header() {
    }, [pathname]);
 
    function scrollToTop() {
-      window.scrollTo({
-         top: 0,
-      });
+      window.scrollTo(0, 0);
    }
 
    React.useEffect(() => {
@@ -97,7 +95,7 @@ function Header() {
                   {loading && isResultOpen ? (
                      <div className="loading-header"></div>
                   ) : (
-                     <button></button>
+                     <button aria-label="Search icon"></button>
                   )}
                </form>
                {isResultOpen && bookList?.length && value.length ? (

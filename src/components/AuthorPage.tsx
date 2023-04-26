@@ -24,7 +24,7 @@ function AuthorPage() {
    }, [authorName]);
 
    React.useEffect(() => {
-      if (authorInfo) request("?q=", authorInfo.title, undefined);
+      if (authorInfo) request("?q=", authorInfo.title);
    }, [authorInfo, request]);
 
    if (!bookList || !authorInfo) return <div className="loading"></div>;

@@ -12,10 +12,10 @@ interface ImageProps {
 function Image({ alt, src, width, height, className }: ImageProps) {
    const [skeleton, setSkeleton] = React.useState(true);
 
-   function handleLoad(event: React.SyntheticEvent<HTMLImageElement>) {
+   function handleLoad(e: React.SyntheticEvent<HTMLImageElement>) {
       setSkeleton(false);
-      event.currentTarget.style.opacity = "1";
-      event.currentTarget.style.height = "auto";
+      e.currentTarget.style.opacity = "1";
+      e.currentTarget.style.height = "auto";
    }
 
    return (
