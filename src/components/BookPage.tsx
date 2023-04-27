@@ -62,8 +62,6 @@ function BookPage() {
          <section className={`${styles.bookPageContainer} animeLeft`}>
             <Head
                title={`${book.volumeInfo.title} by ${book.volumeInfo.authors[0]}`}
-               ogImage={`https://books.google.com/books/publisher/content/images/frontcover/${book.id}?fife=w256-h256`}
-               description={`${book.volumeInfo.title} by ${book.volumeInfo.authors[0]} on ShelfSpace`}
             />
             <div className={styles.bookPageLeft}>
                <Image
