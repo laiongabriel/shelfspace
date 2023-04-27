@@ -1,8 +1,8 @@
 export const classicsList = [
    {
-      id: "-vEgM9Ly3swC",
-      title: "Dracula",
-      firstPublished: 1897,
+      id: "Mf3aewbMeXYC",
+      title: "Don Quixote",
+      firstPublished: 1605,
    },
    {
       id: "RyGVAgAAQBAJ",
