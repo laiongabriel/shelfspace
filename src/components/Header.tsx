@@ -22,8 +22,11 @@ function Header() {
       if (pathname !== "/search") setValue("");
    }, [pathname]);
 
-   function scrollToTop() {
-      window.scrollTo(0, 0);
+   function scrollToTop(): void {
+      window.scrollTo({
+         top: 0,
+         behavior: "smooth",
+      });
    }
 
    React.useEffect(() => {
@@ -71,11 +74,6 @@ function Header() {
             <nav>
                <ul className={styles.navList}>
                   <li>
-                     <Link to="/" onClick={scrollToTop}>
-                        Home
-                     </Link>
-                  </li>
-                  <li>
                      <Link to="/mybooks">My Books</Link>
                   </li>
                   <li>
@@ -98,7 +96,7 @@ function Header() {
                      <button aria-label="Search icon"></button>
                   )}
                </form>
-               {isResultOpen && bookList?.length && value.length ? (
+               {isResultOpen && bookList && value.length ? (
                   <ul className={`${styles.searchResult} animeUpDown`}>
                      {bookList.slice(0, 5).map((book) => (
                         <li>
@@ -113,13 +111,15 @@ function Header() {
                                  src={`https://books.google.com/books/publisher/content/images/frontcover/${book.id}?fife=w48p-h72p`}
                               />
                               <div className={styles.searchResultItemInfo}>
-                                 <p>{book.volumeInfo.title}</p>
-                                 <span>{book.volumeInfo.authors[0]}</span>
+                                 <h4>{book.volumeInfo.title}</h4>
+                                 <span>by {book.volumeInfo.authors[0]}</span>
                               </div>
                            </Link>
                         </li>
                      ))}
-                     <button onClick={handleSubmit}>View all results...</button>
+                     <button onClick={handleSubmit} className={styles.viewAll}>
+                        View all results ({bookList.length})
+                     </button>
                   </ul>
                ) : null}
             </div>

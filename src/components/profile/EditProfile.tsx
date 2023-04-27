@@ -7,7 +7,9 @@ import NoPicture from "../../assets/img/no-picture.svg";
 
 function EditProfile() {
    const [newUserName, setNewUserName] = React.useState("");
-   const [newUserBio, setNewUserBio] = React.useState("");
+   const [newUserBio, setNewUserBio] = React.useState(
+      localStorage.getItem("userBio")
+   );
    const navigate = useNavigate();
    const {
       handleImageChange,
@@ -42,9 +44,11 @@ function EditProfile() {
    function handleSubmit() {
       if (newUserName) localStorage.setItem("userName", newUserName);
       if (croppedPicture) localStorage.setItem("userPicture", croppedPicture);
-      if (newUserBio) localStorage.setItem("userBio", newUserBio);
+      localStorage.setItem("userBio", newUserBio!);
       navigate("/profile");
    }
+
+   console.log(newUserBio);
 
    return (
       <section className="animeLeft">
@@ -64,7 +68,7 @@ function EditProfile() {
             cols={50}
             rows={7}
             maxLength={600}
-            defaultValue={userBio ? userBio : ""}
+            defaultValue={userBio ?? ""}
             onChange={({ target }) => setNewUserBio(target.value)}
          ></textarea>
 

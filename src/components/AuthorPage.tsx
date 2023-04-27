@@ -28,10 +28,11 @@ function AuthorPage() {
    }, [authorInfo, request]);
 
    if (!bookList || !authorInfo) return <div className="loading"></div>;
-   if (authorInfo?.title === "Not found.") return <NotFound />;
+   if (authorInfo.title === "Not found.")
+      return <p>This author does not exist in our database.</p>;
    return (
       <section className="animeLeft">
-         <Head title={`${authorName?.replace("_", " ")}`} />
+         <Head title={`${authorName?.replaceAll("_", " ")}`} />
          {authorInfo && (
             <div className={styles.authorContainer}>
                <section className={styles.authorInfo}>

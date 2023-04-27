@@ -56,7 +56,7 @@ function BookPage() {
    }
 
    if (loading) return <div className="loading"></div>;
-   if (error) return <div>{error}</div>;
+   if (error) return <p>{error}</p>;
    if (book)
       return (
          <section className={`${styles.bookPageContainer} animeLeft`}>

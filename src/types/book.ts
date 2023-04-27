@@ -1,4 +1,7 @@
 export interface Book {
+   error?: {
+      code: number;
+   };
    id: string;
    volumeInfo: {
       title: string;

@@ -1,11 +1,12 @@
 .header {
    position: fixed;
-   z-index: 100;
+   z-index: 999;
    top: 0;
    left: 0;
    width: 100%;
    background-color: #f4f1ea;
-   border-bottom: 1px solid #e0e0e0;
+
+   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.16);
 }
 
 .headerContent {
@@ -32,7 +33,7 @@
    li a {
       transition: 0.2s;
       line-height: 55px;
-      padding: 1px 1rem 0;
+      padding: 0 1rem;
       border-bottom: 2px solid transparent;
       &:hover {
          border-bottom: 2px solid #412918;
@@ -81,6 +82,7 @@
    }
 
    .searchResult {
+      display: grid;
       position: absolute;
       z-index: 999;
       width: 100%;
@@ -88,16 +90,29 @@
 
       background-color: #ffffff;
       border: 1px solid #dcd6cc;
-   }
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.16);
 
-   .searchResultItem {
-      display: flex;
-      gap: 0.6rem;
-      padding: 8px 8px 8px 10px;
-      border-bottom: 1px solid #dcd6cc;
-      width: 100%;
-      &:hover {
-         background-color: #f4f1ea;
+      .searchResultItem {
+         display: flex;
+         gap: 0.6rem;
+         padding: 8px 8px 8px 10px;
+         border-bottom: 2px solid #dcd6cc;
+         width: 100%;
+         &:hover {
+            background-color: #f4f1ea;
+         }
+      }
+
+      .viewAll {
+         all: unset;
+         font-weight: bold;
+         text-align: center;
+         cursor: pointer;
+         padding: 8px 0;
+         color: #412918;
+         &:hover {
+            text-decoration: underline;
+         }
       }
    }
 }

@@ -9,7 +9,6 @@ function useFetch() {
 
    const request = React.useCallback(
       async (value?: string, author?: string, bookId?: string) => {
-         console.log(value);
          const baseUrl = "https://www.googleapis.com/books/v1/volumes";
          let finalUrl;
 
@@ -25,6 +24,10 @@ function useFetch() {
             setError(null);
             setLoading(true);
             const response = await fetch(finalUrl);
+            if (!response.ok)
+               throw new Error(
+                  "An error has occurred. Check if you searched correctly and try again."
+               );
             const json = await response.json();
             if (bookId) {
                setBook(json as Book);
