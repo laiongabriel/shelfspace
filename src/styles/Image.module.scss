@@ -11,6 +11,15 @@
    }
 }
 
+.hover {
+   outline: 2px solid transparent;
+   transition: 0.3s ease;
+   &:hover {
+      outline: 2px solid #918c6f;
+      box-shadow: 0 0 0.4rem rgba(77, 53, 37, 0.5);
+   }
+}
+
 .skeleton {
    grid-area: 1/1;
    border-radius: 4px;
@@ -26,9 +35,4 @@
    to {
       background-position: -200%;
    }
-}
-
-.croppedPic {
-   width: 300px;
-   border-radius: 50%;
 }

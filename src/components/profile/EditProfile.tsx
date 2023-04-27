@@ -8,7 +8,7 @@ import NoPicture from "../../assets/img/no-picture.svg";
 function EditProfile() {
    const [newUserName, setNewUserName] = React.useState("");
    const [newUserBio, setNewUserBio] = React.useState(
-      localStorage.getItem("userBio")
+      localStorage.getItem("userBio") || ""
    );
    const navigate = useNavigate();
    const {
@@ -44,7 +44,7 @@ function EditProfile() {
    function handleSubmit() {
       if (newUserName) localStorage.setItem("userName", newUserName);
       if (croppedPicture) localStorage.setItem("userPicture", croppedPicture);
-      localStorage.setItem("userBio", newUserBio!);
+      localStorage.setItem("userBio", newUserBio);
       navigate("/profile");
    }
 

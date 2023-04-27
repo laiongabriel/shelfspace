@@ -1,32 +1,28 @@
 @use "../App.scss";
 
-.home {
-   display: grid;
-   gap: 2.25rem;
-   justify-items: center;
+.homeIntro {
+   margin-top: 1.2rem;
+   margin-bottom: 2.5rem;
    text-align: center;
 }
 
-.homeIntro {
-   margin-top: 1rem;
-}
-
-.classicsListContainer {
-   display: grid;
-   gap: 1rem;
-   justify-items: center;
+.classicsDesc {
+   text-align: center;
+   margin-bottom: 2.5rem;
 }
 
 .classicsList {
    display: flex;
-   flex-wrap: wrap;
    justify-content: center;
-   gap: 2rem;
+   flex-wrap: wrap;
+   gap: 2.2rem;
+   margin-bottom: 4rem;
 }
 
 .classicInfo {
    width: 180px;
-   padding: 0.5rem;
+   padding: 0.4rem;
+   text-align: center;
 }
 
 .classicTitle {
@@ -35,4 +31,37 @@
 
 .classicDate {
    color: rgb(82, 82, 82);
+}
+
+.authorsDesc {
+   text-align: center;
+   margin-bottom: 2.8rem;
+}
+
+.authorsList {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 2.5rem;
+   justify-content: center;
+}
+
+.authorContent {
+   display: grid;
+   grid-template-columns: auto 1fr;
+   align-self: center;
+   gap: 1rem;
+
+   .authorDesc {
+      margin-top: 0.5rem;
+   }
+
+   p {
+      margin-top: 0.4rem;
+      font-size: 0.96rem;
+   }
+
+   a {
+      margin-top: 0.5rem;
+      text-decoration: underline;
+   }
 }

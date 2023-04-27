@@ -4,9 +4,9 @@
    top: 0;
    left: 0;
    width: 100%;
-   background-color: #f4f1ea;
+   background-color: #f8f3d5;
 
-   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.16);
+   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.18);
 }
 
 .headerContent {
@@ -55,7 +55,7 @@
       input {
          width: 100%;
          font-size: 0.9rem;
-         border: 1px solid #dcd6cc;
+         border: 1px solid #cec7bc;
          border-radius: 4px;
          background-color: #ffffff;
          color: #333;
@@ -64,7 +64,7 @@
          transition: 0.2s;
 
          &:focus {
-            box-shadow: 0 0 0.4rem rgba(185, 173, 153, 0.5);
+            box-shadow: 0 0 0.4rem rgba(163, 152, 132, 0.5);
          }
       }
 
@@ -131,13 +131,13 @@
 
 .noPicture {
    background-color: #f5f4f1;
-   outline: 1px solid #e0e0e0;
+   outline: 1px solid #cacaca;
    border-radius: 50%;
    width: 34px;
 }
 
 .userPicture {
-   border: 1px solid #e0e0e0;
+   border: 1px solid #cacaca;
    border-radius: 50%;
    width: 34px;
 }

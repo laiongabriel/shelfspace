@@ -69,6 +69,7 @@ function BookPage() {
                   src={`https://books.google.com/books/publisher/content/images/frontcover/${book.id}?fife=w512-h512`}
                   width="228px"
                   height="350px"
+                  heightAuto={true}
                />
                <div className={styles.bookActions}>
                   {userName ? (

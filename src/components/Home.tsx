@@ -1,55 +1,30 @@
 import Head from "./helper/Head";
 import styles from "../styles/Home.module.scss";
 import { Link } from "react-router-dom";
+import { classicsList, authorsList } from "../lists";
 import Image from "./helper/Image";
 
 function Home() {
-   const classicsList = [
-      {
-         id: "-vEgM9Ly3swC",
-         title: "Dracula",
-         firstPublished: 1897,
-         author: "Bram Stoker",
-      },
-      {
-         id: "RyGVAgAAQBAJ",
-         title: "One Hundred Years of Solitude",
-         firstPublished: 1967,
-         author: "Gabriel Garcia Marquez",
-      },
-      {
-         id: "oaAA9jRq9kkC",
-         title: "Pride and Prejudice",
-         firstPublished: 1813,
-         author: "Jane Austen",
-      },
-      {
-         id: "U5NhxE67JjMC",
-         title: "Crime and Punishment",
-         firstPublished: 1866,
-         author: "Fyodor Dostoevsky",
-      },
-      {
-         id: "kotPYEqx7kMC",
-         title: "1984",
-         firstPublished: 1949,
-         author: "George Orwell",
-      },
-   ];
-
    return (
-      <section className={styles.home}>
+      <section>
          <Head title="Home" />
          <div className={styles.homeIntro}>
-            <h1>Wellcome to ShelfSpace!</h1>
+            <h1>Welcome to ShelfSpace!</h1>
             <p>
                Your personal virtual bookshelf. Discover, organize and access
                your favorite books.
             </p>
          </div>
 
-         <div className={styles.classicsListContainer}>
-            <h1>World literature classics that you might enjoy...</h1>
+         <section className={styles.classicsListContainer}>
+            <div className={styles.classicsDesc}>
+               <h1>World literature classics that you might enjoy...</h1>
+               <p>
+                  These books have influenced generations of readers and have
+                  left a lasting impact on the literary world.
+               </p>
+            </div>
+
             <ul className={styles.classicsList}>
                {classicsList.map((book) => (
                   <li key={book.id} className={styles.classicItem}>
@@ -59,6 +34,7 @@ function Home() {
                            src={`https://books.google.com/books/publisher/content/images/frontcover/${book.id}?fife=w512-h512`}
                            width="180px"
                            height="276px"
+                           hover={true}
                         />
                      </Link>
                      <div className={styles.classicInfo}>
@@ -72,7 +48,34 @@ function Home() {
                   </li>
                ))}
             </ul>
-         </div>
+         </section>
+
+         <section>
+            <div className={styles.authorsDesc}>
+               <h1>Some of the greatest authors of all time</h1>
+               <p>
+                  Explore works by the greatest authors of all time and discover
+                  why they're beloved worldwide.
+               </p>
+            </div>
+
+            <ul className={styles.authorsList}>
+               {authorsList.map((author) => (
+                  <li key={author.name} className={styles.authorContent}>
+                     <Image
+                        width="255px"
+                        src={author.image}
+                        alt={author.name}
+                     />
+                     <div className={styles.authorDesc}>
+                        <h2>{author.name}</h2>
+                        <p>{author.description}</p>
+                        <Link to={`/author/${author.name}`}>Read more</Link>
+                     </div>
+                  </li>
+               ))}
+            </ul>
+         </section>
       </section>
    );
 }

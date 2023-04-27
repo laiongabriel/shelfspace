@@ -5,7 +5,6 @@ import useFetch from "../hooks/useFetch";
 import { Author } from "../types/book";
 import Image from "./helper/Image";
 import styles from "../styles/AuthorPage.module.scss";
-import NotFound from "./helper/NotFound";
 
 function AuthorPage() {
    const [authorInfo, setAuthorInfo] = React.useState<Author | null>(null);
@@ -40,12 +39,12 @@ function AuthorPage() {
                      <Image
                         alt={authorInfo.title}
                         src={authorInfo.thumbnail.source}
-                        width={String(authorInfo.thumbnail.width)}
-                        height={String(authorInfo.thumbnail.height)}
+                        heightAuto={true}
                      />
                   )}
                   <div className={styles.authorDesc}>
                      <h1>{authorInfo.title}</h1>
+                     <p>{authorInfo.description}</p>
                      <p>{authorInfo.extract}</p>
                   </div>
                </section>
@@ -60,6 +59,7 @@ function AuthorPage() {
                                  <Image
                                     alt={book.volumeInfo.title}
                                     src={book.volumeInfo.imageLinks.thumbnail}
+                                    heightAuto={true}
                                  />
                               </Link>
                            </li>

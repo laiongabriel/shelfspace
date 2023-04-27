@@ -15,7 +15,7 @@ function useFetch() {
          if (author) {
             finalUrl = `${
                baseUrl + value
-            }+inauthor:${author}&filter=ebooks&maxResults=14`;
+            }+inauthor:${author}&maxResults=16&filter=ebooks`;
          } else if (bookId) {
             finalUrl = `${baseUrl}/${bookId}`;
          } else finalUrl = `${baseUrl + value}&filter=ebooks&maxResults=15`;

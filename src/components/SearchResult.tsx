@@ -8,7 +8,6 @@ import Head from "./helper/Head";
 function SearchResult() {
    const { bookList, loading, error, request } = useFetch();
    const location = useLocation();
-   console.log(location);
 
    React.useEffect(() => {
       request(location.search);
@@ -29,6 +28,7 @@ function SearchResult() {
                         src={`https://books.google.com/books/publisher/content/images/frontcover/${book.id}?fife=w512-h512`}
                         width="128px"
                         height="186px"
+                        hover={true}
                      />
                   </Link>
                   <div className={styles.bookInfo}>

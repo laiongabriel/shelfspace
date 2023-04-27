@@ -56,6 +56,8 @@ function MyBooks() {
                            src={book.image}
                            width="128px"
                            height="199px"
+                           heightAuto={true}
+                           hover={true}
                         />
                      </Link>
                      <button

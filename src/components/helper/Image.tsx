@@ -6,23 +6,24 @@ interface ImageProps {
    src: string;
    width?: string;
    height?: string;
-   className?: string;
+   heightAuto?: boolean;
+   hover?: boolean;
 }
 
-function Image({ alt, src, width, height, className }: ImageProps) {
+function Image({ alt, src, width, height, heightAuto, hover }: ImageProps) {
    const [skeleton, setSkeleton] = React.useState(true);
 
    function handleLoad(e: React.SyntheticEvent<HTMLImageElement>) {
       setSkeleton(false);
       e.currentTarget.style.opacity = "1";
-      e.currentTarget.style.height = "auto";
+      if (heightAuto) e.currentTarget.style.height = "auto";
    }
 
    return (
       <div className={styles.wrapper}>
          {skeleton && <div className={styles.skeleton}></div>}
          <img
-            className={className}
+            className={hover ? styles.hover : ""}
             onLoad={handleLoad}
             src={src}
             alt={alt}

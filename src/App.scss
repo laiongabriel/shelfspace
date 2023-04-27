@@ -14,13 +14,13 @@ body {
    line-height: 1.5;
    -webkit-font-smoothing: antialiased;
    padding-top: 70px;
-   background-color: #ffffff;
-   height: 1000px;
+   background-color: #fffefb;
+   padding-bottom: 1000px;
 }
 
 .container {
-   max-width: 71rem;
-   padding: 0 1.25rem;
+   max-width: 75rem;
+   padding: 0 1.5rem;
    margin: 0 auto;
 }
 
@@ -55,7 +55,7 @@ a {
 
 img {
    display: block;
-   height: auto;
+
    max-width: 100%;
 }
 
@@ -66,9 +66,10 @@ img {
 }
 
 .noPicture {
-   background-color: #f5f4f1;
-   outline: 1px solid #d4d4d4;
+   width: 170px;
    border-radius: 50%;
+   border: 1px solid #d4d4d4;
+   background-color: #f5f4f1;
 }
 
 input,
