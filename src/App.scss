@@ -1,6 +1,6 @@
 $p-font: Lexend;
 $h-font: Alice;
-$primary-color: #0c0c0c;
+$primary-color: #141414;
 
 * {
    margin: 0;
@@ -85,12 +85,13 @@ input::-webkit-file-upload-button {
 }
 
 .loading {
-   width: 30px;
-   height: 30px;
+   width: 50px;
+   height: 50px;
    border-radius: 50%;
-   border: 4px solid $primary-color;
+   border: 7px solid #412918;
    border-right-color: transparent;
    animation: loading 1s infinite;
+   margin: 0.5rem;
 }
 
 .loading-header {
