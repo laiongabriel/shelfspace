@@ -2,7 +2,6 @@ import Head from "./helper/Head";
 import styles from "../styles/Home.module.scss";
 import { Link } from "react-router-dom";
 import Image from "./helper/Image";
-import SiteLogo from "../assets/img/site-logo.svg";
 
 function Home() {
    const classicsList = [
@@ -40,11 +39,7 @@ function Home() {
 
    return (
       <section className={styles.home}>
-         <Head
-            title="Home"
-            description="Your personal virtual bookshelf. Discover, organize and access your favorite books."
-            ogImage={SiteLogo}
-         />
+         <Head title="Home" />
          <div className={styles.homeIntro}>
             <h1>Wellcome to ShelfSpace!</h1>
             <p>
