@@ -1,7 +1,7 @@
 import Head from "./helper/Head";
 import styles from "../styles/Home.module.scss";
 import { Link } from "react-router-dom";
-import { classicsList, authorsList } from "../lists";
+import { classicsList, authorsList } from "../homeLists";
 import Image from "./helper/Image";
 
 function Home() {

@@ -4,7 +4,7 @@
    img {
       grid-area: 1/1;
       border-radius: 4px;
-      box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
+      box-shadow: 0 1px 4px 0 rgba(60, 64, 67, 0.212),
          0 1px 3px 1px rgba(60, 64, 67, 0.15);
       transition: 0.4s;
       opacity: 0;
@@ -13,10 +13,9 @@
 
 .hover {
    outline: 2px solid transparent;
-   transition: 0.3s ease;
    &:hover {
-      outline: 2px solid #918c6f;
-      box-shadow: 0 0 0.4rem rgba(77, 53, 37, 0.5);
+      transform: scale(1.02);
+      box-shadow: 0 0 0.3rem rgba(77, 53, 37, 0.7);
    }
 }
 

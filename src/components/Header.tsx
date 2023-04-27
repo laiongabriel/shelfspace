@@ -111,7 +111,7 @@ function Header() {
                                  src={`https://books.google.com/books/publisher/content/images/frontcover/${book.id}?fife=w48p-h72p`}
                               />
                               <div className={styles.searchResultItemInfo}>
-                                 <h4>{book.volumeInfo.title}</h4>
+                                 <h3>{book.volumeInfo.title}</h3>
                                  <span>by {book.volumeInfo.authors[0]}</span>
                               </div>
                            </Link>

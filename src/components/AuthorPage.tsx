@@ -60,6 +60,7 @@ function AuthorPage() {
                                     alt={book.volumeInfo.title}
                                     src={book.volumeInfo.imageLinks.thumbnail}
                                     heightAuto={true}
+                                    hover={true}
                                  />
                               </Link>
                            </li>
