@@ -1,3 +1,5 @@
+@use "../App";
+
 .header {
    position: fixed;
    z-index: 999;
@@ -36,8 +38,7 @@
       padding: 0 1rem;
       border-bottom: 2px solid transparent;
       &:hover {
-         border-bottom: 2px solid #412918;
-         color: #412918;
+         border-bottom: 2px solid App.$primary-color;
       }
    }
 }
@@ -109,7 +110,7 @@
          text-align: center;
          cursor: pointer;
          padding: 8px 0;
-         color: #412918;
+         color: App.$primary-color;
          &:hover {
             text-decoration: underline;
          }

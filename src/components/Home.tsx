@@ -18,7 +18,7 @@ function Home() {
 
          <section className={styles.classicsListContainer}>
             <div className={styles.classicsDesc}>
-               <h1>World literature classics that you might enjoy...</h1>
+               <h1>World literature classics that you might enjoy.</h1>
                <p>
                   These books have influenced generations of readers and have
                   left a lasting impact on the literary world.
@@ -52,7 +52,7 @@ function Home() {
 
          <section>
             <div className={styles.authorsDesc}>
-               <h1>Some of the greatest authors of all time</h1>
+               <h1>Some of the greatest authors of all time.</h1>
                <p>
                   Explore works by the greatest authors of all time and discover
                   why they're beloved worldwide.
@@ -75,6 +75,56 @@ function Home() {
                   </li>
                ))}
             </ul>
+         </section>
+
+         <section className={styles.readingContainer}>
+            <h1>The importance of reading</h1>
+            <div className={styles.readingList}>
+               <div>
+                  <h2>📚 Expanding Knowledge</h2>
+                  <p>
+                     Reading allows us to gain knowledge on a wide range of
+                     topics, whether it's through reading non-fiction or
+                     immersing ourselves in a fictional world. By reading, we
+                     can learn about new ideas, perspectives, and cultures,
+                     ultimately broadening our understanding of the world around
+                     us.
+                  </p>
+               </div>
+
+               <div>
+                  <h2>🧠 Improved Mental Health</h2>
+                  <p>
+                     Reading has been shown to have positive effects on mental
+                     health, such as reducing stress levels, improving memory
+                     retention, and boosting creativity. Additionally, reading
+                     can serve as a form of escapism and relaxation, providing a
+                     much-needed break from the stresses of everyday life.
+                  </p>
+               </div>
+
+               <div>
+                  <h2>🤝 Increased Empathy</h2>
+                  <p>
+                     Reading allows us to experience different perspectives and
+                     walk in the shoes of others, leading to increased empathy
+                     and understanding. Through reading, we can learn about
+                     diverse experiences and cultures, ultimately becoming more
+                     accepting and compassionate individuals.
+                  </p>
+               </div>
+
+               <div>
+                  <h2>💪 Personal Growth</h2>
+                  <p>
+                     Reading can also serve as a tool for personal growth,
+                     helping us to develop new skills and achieve our goals.
+                     Whether it's reading self-help books or learning about
+                     different industries, reading can inspire us to take action
+                     and make positive changes in our lives.
+                  </p>
+               </div>
+            </div>
          </section>
       </section>
    );
