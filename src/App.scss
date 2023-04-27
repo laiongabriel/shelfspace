@@ -15,11 +15,17 @@ body {
    -webkit-font-smoothing: antialiased;
    padding-top: 78px;
    background-color: #fffefb;
-   padding-bottom: 800px;
    overflow-y: scroll;
 }
 
+main {
+   display: flex;
+   flex-direction: column;
+   min-height: calc(100vh - 60.06px);
+}
+
 .container {
+   flex: 1;
    max-width: 75rem;
    padding: 0 1.5rem;
    margin: 0 auto;
@@ -94,13 +100,13 @@ input::-webkit-file-upload-button {
 }
 
 .loading {
-   width: 40px;
-   height: 40px;
+   width: 35px;
+   height: 35px;
    border-radius: 50%;
    border: 5px solid #412918;
    border-right-color: transparent;
-   animation: loading 1s linear infinite;
-   margin: 0.6rem;
+   animation: loading 1s infinite;
+   margin: 0.5rem;
 }
 
 .loading-header {

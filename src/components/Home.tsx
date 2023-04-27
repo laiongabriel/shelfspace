@@ -78,7 +78,11 @@ function Home() {
          </section>
 
          <section className={styles.readingContainer}>
-            <h1>The importance of reading</h1>
+            <div className={styles.readingDesc}>
+               <h1>The importance of reading</h1>
+               <p>The benefits of losing yourself in a good book!</p>
+            </div>
+
             <div className={styles.readingList}>
                <div>
                   <h2>📚 Expanding Knowledge</h2>

@@ -10,24 +10,28 @@ import CreateProfile from "./components/profile/CreateProfile";
 import AuthorPage from "./components/AuthorPage";
 import NotFound from "./components/helper/NotFound";
 import Profile from "./components/profile/Profile";
+import Footer from "./components/Footer";
 
 function App() {
    return (
       <BrowserRouter>
          <ScrollTop />
-         <Header />
          <div className="container">
-            <Routes>
-               <Route path="/" element={<Home />} />
-               <Route path="/search" element={<SearchResultPage />} />
-               <Route path="/book/:bookId" element={<BookPage />} />
-               <Route path="/profile/*" element={<Profile />} />
-               <Route path="/createprofile" element={<CreateProfile />} />
-               <Route path="/mybooks" element={<MyBooks />} />
-               <Route path="/author/:authorName" element={<AuthorPage />} />
-               <Route path="*" element={<NotFound />} />
-            </Routes>
+            <Header />
+            <main>
+               <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/search" element={<SearchResultPage />} />
+                  <Route path="/book/:bookId" element={<BookPage />} />
+                  <Route path="/profile/*" element={<Profile />} />
+                  <Route path="/createprofile" element={<CreateProfile />} />
+                  <Route path="/mybooks" element={<MyBooks />} />
+                  <Route path="/author/:authorName" element={<AuthorPage />} />
+                  <Route path="*" element={<NotFound />} />
+               </Routes>
+            </main>
          </div>
+         <Footer />
       </BrowserRouter>
    );
 }

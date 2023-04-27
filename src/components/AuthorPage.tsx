@@ -11,6 +11,8 @@ function AuthorPage() {
    const { authorName } = useParams();
    const { request, bookList } = useFetch();
 
+   console.log(bookList);
+
    React.useEffect(() => {
       async function getAuthorInfo(authorName: string) {
          const response = await fetch(
