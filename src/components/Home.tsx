@@ -13,7 +13,7 @@ function Home() {
       e.preventDefault();
       classicsDiv.current?.scrollIntoView({
          behavior: "smooth",
-         block: "center",
+         block: "start",
       });
    }
 
