@@ -74,7 +74,7 @@ function Header() {
             <nav>
                <ul className={styles.navList}>
                   <li>
-                     <Link to="/mybooks">My Books</Link>
+                     <Link to="/myshelf">My Shelf</Link>
                   </li>
                   <li>
                      <Link to="/about">About</Link>

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../styles/Image.module.scss";
+import styles from "../../styles/helper/Image.module.scss";
 
 interface ImageProps {
    alt: string;

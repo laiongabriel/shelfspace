@@ -85,7 +85,7 @@ function Home() {
 
             <div className={styles.readingList}>
                <div>
-                  <h2>📚 Expanding Knowledge</h2>
+                  <h2>📚 Expanding knowledge</h2>
                   <p>
                      Reading allows us to gain knowledge on a wide range of
                      topics, whether it's through reading non-fiction or
@@ -97,7 +97,7 @@ function Home() {
                </div>
 
                <div>
-                  <h2>🧠 Improved Mental Health</h2>
+                  <h2>🧠 Improved mental health</h2>
                   <p>
                      Reading has been shown to have positive effects on mental
                      health, such as reducing stress levels, improving memory
@@ -108,7 +108,7 @@ function Home() {
                </div>
 
                <div>
-                  <h2>🤝 Increased Empathy</h2>
+                  <h2>🤝 Increased empathy</h2>
                   <p>
                      Reading allows us to experience different perspectives and
                      walk in the shoes of others, leading to increased empathy
@@ -119,7 +119,7 @@ function Home() {
                </div>
 
                <div>
-                  <h2>💪 Personal Growth</h2>
+                  <h2>💪 Personal growth</h2>
                   <p>
                      Reading can also serve as a tool for personal growth,
                      helping us to develop new skills and achieve our goals.

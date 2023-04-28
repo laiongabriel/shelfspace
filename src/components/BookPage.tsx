@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import { UserBookList } from "../types/book";
+import { UserBookList } from "../types";
 import useFetch from "../hooks/useFetch";
 import styles from "../styles/BookPage.module.scss";
 import Image from "./helper/Image";
@@ -75,8 +75,8 @@ function BookPage() {
                   {userName ? (
                      <button onClick={toggleList}>
                         {isOnList
-                           ? "Remove from your books"
-                           : "Add to your books"}
+                           ? "Remove from your shelf"
+                           : "Add to your shelf"}
                      </button>
                   ) : (
                      <p>Create a profile to start adding books!</p>

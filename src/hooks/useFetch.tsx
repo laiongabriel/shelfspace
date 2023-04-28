@@ -1,5 +1,5 @@
 import React from "react";
-import { Book } from "../types/book";
+import { Book } from "../types";
 
 function useFetch() {
    const [bookList, setBookList] = React.useState<Book[] | null>(null);

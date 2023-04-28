@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import Head from "./helper/Head";
 import useFetch from "../hooks/useFetch";
-import { Author } from "../types/book";
+import { Author } from "../types";
 import Image from "./helper/Image";
 import styles from "../styles/AuthorPage.module.scss";
 
@@ -10,8 +10,6 @@ function AuthorPage() {
    const [authorInfo, setAuthorInfo] = React.useState<Author | null>(null);
    const { authorName } = useParams();
    const { request, bookList } = useFetch();
-
-   console.log(bookList);
 
    React.useEffect(() => {
       async function getAuthorInfo(authorName: string) {

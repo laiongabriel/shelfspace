@@ -1,0 +1,26 @@
+.modal {
+   position: fixed;
+   inset: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 999;
+   transition: 0.2s;
+   background-color: rgba(0, 0, 0, 0.4);
+   overscroll-behavior: contain;
+}
+
+.modalContent {
+   position: relative;
+   width: 30%;
+   border-radius: 4px;
+   background-color: #f8f3d5;
+   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.18);
+   padding: 1.5rem;
+}
+
+.buttons {
+   display: flex;
+   justify-content: right;
+   gap: 5px;
+}

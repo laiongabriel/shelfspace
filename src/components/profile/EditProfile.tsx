@@ -48,8 +48,6 @@ function EditProfile() {
       navigate("/profile");
    }
 
-   console.log(newUserBio);
-
    return (
       <section className="animeLeft">
          <Head title="Edit your profile" />
