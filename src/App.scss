@@ -13,14 +13,12 @@ body {
    font-family: $p-font, sans-serif;
    line-height: 1.5;
    -webkit-font-smoothing: antialiased;
-   padding-top: 58px;
-   background-color: #fffefb;
+   padding-top: 58.5px;
+   background-color: #fffefd;
 }
 
 main {
-   display: flex;
-   flex-direction: column;
-   min-height: calc(100vh - 58px);
+   min-height: calc(100vh - 59.38px);
 }
 
 .container {
@@ -86,6 +84,19 @@ button {
    font: inherit;
 }
 
+.button {
+   all: unset;
+   color: #fffefd;
+   padding: 0.5rem 1rem;
+   border-radius: 4px;
+   cursor: pointer;
+   background-color: $primary-color;
+   transition: 0.2s ease-in;
+   &:hover {
+      background-color: #52331f;
+   }
+}
+
 input::-webkit-file-upload-button {
    font: inherit;
 }
@@ -97,7 +108,7 @@ input::-webkit-file-upload-button {
    border: 5px solid #412918;
    border-right-color: transparent;
    animation: loading 1s infinite;
-   margin: 0.5rem;
+   margin: 1rem;
 }
 
 .loading-header {

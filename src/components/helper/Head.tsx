@@ -6,7 +6,7 @@ interface HeadProps {
 
 function Head({ title }: HeadProps) {
    React.useEffect(() => {
-      document.title = title + " | ShelfSpace";
+      document.title = title + " - ShelfSpace";
    }, [title]);
 
    return null;

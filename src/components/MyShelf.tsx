@@ -4,11 +4,9 @@ import Image from "./helper/Image";
 import styles from "../styles/MyShelf.module.scss";
 import { Link } from "react-router-dom";
 import Head from "./helper/Head";
-import Modal from "./helper/Modal";
 
 function MyShelf() {
    const [bookList, setBookList] = React.useState<UserBookList[] | null>(null);
-   // const [isModalOpen, setIsModalOpen] = React.useState(false);
    const userName = localStorage.getItem("userName");
    const localList = localStorage.getItem("userBookList");
 
@@ -17,7 +15,6 @@ function MyShelf() {
    }, [localList]);
 
    function removeFromList(id: string, title: string) {
-      // setIsModalOpen(true);
       if (bookList) {
          const bookItem = document.getElementById(id);
          if (
@@ -39,54 +36,46 @@ function MyShelf() {
    }
 
    return (
-      <section>
-         <Head title="My Books" />
-         {/* {isModalOpen && (
-            <Modal
-               title="Remove confirmation"
-               msg="Are you sure?"
-               confirmMsg={"Remove"}
-               cancelMsg={"Cancel"}
-            />
-         )} */}
-         <div className="animeUpDown">
-            <h1>My Shelf</h1>
-            {!userName ? (
-               <p>
-                  <Link
-                     to="/createprofile"
-                     className={styles.createProfileLink}
-                  >
-                     Create a profile
-                  </Link>{" "}
-                  to start adding books!
-               </p>
-            ) : bookList?.length ? (
-               <ul className={styles.bookList}>
-                  {bookList.map((book) => (
-                     <li key={book.id} className={styles.bookItem} id={book.id}>
-                        <Link to={`/book/${book.id}`}>
-                           <Image
-                              alt={book.title}
-                              src={book.image}
-                              width="128px"
-                              height="199px"
-                              heightAuto={true}
-                              hover={true}
-                           />
-                        </Link>
-                        <button
-                           onClick={() => removeFromList(book.id, book.title)}
-                        >
-                           Remove
-                        </button>
-                     </li>
-                  ))}
-               </ul>
-            ) : (
-               <p>You don't have any books yet!</p>
+      <section className={`${styles.myShelf} animeUpDown`}>
+         <Head title="My Shelf" />
+         <h1>
+            My Shelf{" "}
+            {bookList && bookList?.length !== 0 && (
+               <span className={styles.size}>({bookList?.length})</span>
             )}
-         </div>
+         </h1>
+         {!userName ? (
+            <p>
+               <Link to="/createprofile" className={styles.createProfileLink}>
+                  Create a profile
+               </Link>{" "}
+               to start adding books!
+            </p>
+         ) : bookList?.length ? (
+            <ul className={styles.bookList}>
+               {bookList.map((book) => (
+                  <li key={book.id} className={styles.bookItem} id={book.id}>
+                     <Link to={`/book/${book.id}`}>
+                        <Image
+                           alt={book.title}
+                           src={book.image}
+                           width="128px"
+                           height="199px"
+                           heightAuto={true}
+                           hover={true}
+                        />
+                     </Link>
+                     <button
+                        onClick={() => removeFromList(book.id, book.title)}
+                     >
+                        Remove
+                     </button>
+                  </li>
+               ))}
+            </ul>
+         ) : (
+            <p>You don't have any books yet!</p>
+         )}
       </section>
    );
 }

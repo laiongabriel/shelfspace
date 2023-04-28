@@ -1,9 +1,27 @@
 @use "../App.scss";
 
 .homeIntro {
-   margin-top: 2.7rem;
-   margin-bottom: 4rem;
-   text-align: center;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   justify-items: center;
+   align-items: center;
+   gap: 5rem;
+   margin: 7rem 0 12rem;
+
+   .homeIntroDesc {
+      margin-bottom: 4rem;
+      h1 {
+         font-size: 2.8rem;
+         margin-bottom: 0.3rem;
+      }
+      p {
+         margin-bottom: 1rem;
+      }
+   }
+
+   img {
+      margin-left: 1rem;
+   }
 }
 
 .classicsDesc {

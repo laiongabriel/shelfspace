@@ -11,6 +11,7 @@ export interface Book {
       description: string;
       publisher: string;
       publishedDate?: string;
+      categories: string[];
       imageLinks: {
          thumbnail: string;
       };
