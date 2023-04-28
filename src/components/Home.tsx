@@ -3,7 +3,7 @@ import styles from "../styles/Home.module.scss";
 import { Link } from "react-router-dom";
 import { classicsList, authorsList } from "../homeLists";
 import Image from "./helper/Image";
-import HomeImg from "../assets/img/Bibliophile-bro.svg";
+import HomeImg from "../assets/img/home-img.svg";
 import React from "react";
 
 function Home() {
