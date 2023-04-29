@@ -23,6 +23,9 @@ body {
 }
 
 main {
+   display: flex;
+   flex-direction: column;
+   flex: 1;
    min-height: calc(100vh - 59.38px);
 }
 
@@ -91,14 +94,16 @@ button {
 
 .button {
    all: unset;
-   color: #fffefd;
-   padding: 0.5rem 1rem;
-   border-radius: 4px;
+   padding: 0.6rem 1.2rem;
    cursor: pointer;
-   background-color: $primary-color;
-   transition: 0.2s ease-in;
+   border: 2px solid rgba(31, 19, 11, 0.815);
+   background-color: rgba(248, 243, 213, 0.5);
+   color: $primary-color;
+   transition: 0.2s ease;
    &:hover {
-      background-color: #52331f;
+      background-color: #422a19;
+      border-color: #422a19;
+      color: #fffefd;
    }
 }
 

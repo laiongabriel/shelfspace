@@ -21,22 +21,25 @@ function Home() {
       <section>
          <Head title="Home" />
          <div className={styles.homeIntro}>
-            <div className={styles.homeIntroDesc}>
+            <div className={`${styles.homeIntroDesc} animeLeft`}>
                <h1>Welcome to ShelfSpace!</h1>
                <p>
-                  Your personal virtual bookshelf. Discover, organize and access
-                  your favorite books. Start exploring now and take your reading
-                  experience to the next level!
+                  Discover, organize, and access your favorite books with ease
+                  on your personal virtual bookshelf. Begin your reading journey
+                  today and take your literary experience to new heights!
                </p>
                <button className="button" onClick={handleExploreClick}>
                   Explore now!
                </button>
             </div>
 
-            <img src={HomeImg} alt="" />
+            <img src={HomeImg} alt="" className="animeUpDown" />
          </div>
 
-         <section className={styles.classicsListContainer} ref={classicsDiv}>
+         <section
+            className={`${styles.classicsListContainer} animeLeft`}
+            ref={classicsDiv}
+         >
             <div className={styles.classicsDesc}>
                <h1>World literature classics that you might enjoy.</h1>
                <p>

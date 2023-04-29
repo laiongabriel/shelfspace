@@ -6,17 +6,21 @@ import { useLocation } from "react-router-dom";
 import NoPicture from "../assets/img/no-picture.svg";
 import useFetch from "../hooks/useFetch";
 import Image from "./helper/Image";
+import useMedia from "../hooks/useMedia";
 
 function Header() {
    const [value, setValue] = React.useState("");
    const [isResultOpen, setIsResultOpen] = React.useState(false);
    const userName = window.localStorage.getItem("userName");
    const userPicture = window.localStorage.getItem("userPicture");
+   const match = useMedia("(max-width: 950px)");
    const navigate = useNavigate();
    const { pathname } = useLocation();
    const { request, loading, bookList, setBookList } = useFetch();
    const searchRef = React.useRef<HTMLDivElement>(null);
    const debounceTimer = React.useRef<ReturnType<typeof setTimeout>>();
+
+   console.log(match);
 
    React.useEffect(() => {
       if (pathname !== "/search") setValue("");
