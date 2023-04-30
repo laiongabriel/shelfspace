@@ -87,7 +87,9 @@ function Header() {
 
             <div
                className={`${
-                  mobileMenu ? styles.navCenterMobile : styles.navCenter
+                  mobileMenu && mobile
+                     ? styles.navCenterMobile
+                     : styles.navCenter
                }`}
             >
                <nav>
@@ -127,7 +129,7 @@ function Header() {
                   </form>
                   {isResultOpen && bookList && value.length ? (
                      <ul className={`${styles.searchResult} animeUpDown`}>
-                        {bookList.slice(0, 5).map((book) => (
+                        {bookList.slice(0, mobile ? 4 : 5).map((book) => (
                            <li key={book.id}>
                               <Link
                                  to={`/book/${book.id}`}
