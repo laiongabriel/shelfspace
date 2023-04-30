@@ -79,7 +79,15 @@ function BookPage() {
                            : "Add to your shelf"}
                      </button>
                   ) : (
-                     <p>Create a profile to start adding books!</p>
+                     <p>
+                        <Link
+                           to="/createprofile"
+                           className={styles.createProfileLink}
+                        >
+                           Create a profile
+                        </Link>{" "}
+                        to start adding books!
+                     </p>
                   )}
                </div>
             </div>

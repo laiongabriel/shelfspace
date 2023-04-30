@@ -59,15 +59,11 @@ function Home() {
                            height="276px"
                            hover={true}
                         />
+                        <div className={styles.classicInfo}>
+                           <p className={styles.classicTitle}>{book.title}</p>
+                           <p className={styles.classicAuthor}>{book.author}</p>
+                        </div>
                      </Link>
-                     <div className={styles.classicInfo}>
-                        <p className={styles.classicTitle}>
-                           {book.title}{" "}
-                           <span className={styles.classicDate}>
-                              ({book.firstPublished})
-                           </span>
-                        </p>
-                     </div>
                   </li>
                ))}
             </ul>

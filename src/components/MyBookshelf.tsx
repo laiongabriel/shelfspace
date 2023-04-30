@@ -1,11 +1,11 @@
 import React from "react";
 import { UserBookList } from "../types";
 import Image from "./helper/Image";
-import styles from "../styles/MyShelf.module.scss";
+import styles from "../styles/MyBookshelf.module.scss";
 import { Link } from "react-router-dom";
 import Head from "./helper/Head";
 
-function MyShelf() {
+function MyBookshelf() {
    const [bookList, setBookList] = React.useState<UserBookList[] | null>(null);
    const userName = localStorage.getItem("userName");
    const localList = localStorage.getItem("userBookList");
@@ -36,10 +36,10 @@ function MyShelf() {
    }
 
    return (
-      <section className={`${styles.myShelf} animeUpDown`}>
-         <Head title="My Shelf" />
+      <section className={`${styles.myBookshelf} animeUpDown`}>
+         <Head title="My Bookshelf" />
          <h1>
-            My Shelf{" "}
+            My Bookshelf{" "}
             {bookList && bookList?.length !== 0 && (
                <span className={styles.size}>({bookList?.length})</span>
             )}
@@ -80,4 +80,4 @@ function MyShelf() {
    );
 }
 
-export default MyShelf;
+export default MyBookshelf;

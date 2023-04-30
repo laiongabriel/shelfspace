@@ -2,27 +2,27 @@ export const classicsList = [
    {
       id: "Mf3aewbMeXYC",
       title: "Don Quixote",
-      firstPublished: 1605,
+      author: "Miguel Cervantes",
    },
    {
-      id: "RyGVAgAAQBAJ",
-      title: "One Hundred Years of Solitude",
-      firstPublished: 1967,
+      id: "z9IHEAAAQBAJ",
+      title: "Hamlet",
+      author: "William Shakespeare",
    },
    {
       id: "oaAA9jRq9kkC",
       title: "Pride and Prejudice",
-      firstPublished: 1813,
+      author: "Jane Austen",
    },
    {
       id: "U5NhxE67JjMC",
       title: "Crime and Punishment",
-      firstPublished: 1866,
+      author: "Fyodor Dostoevsky",
    },
    {
       id: "kotPYEqx7kMC",
       title: "1984",
-      firstPublished: 1949,
+      author: "George Orwell",
    },
 ];
 

@@ -40,6 +40,7 @@ function AuthorPage() {
                         alt={authorInfo.title}
                         src={authorInfo.thumbnail.source}
                         width={String(authorInfo.thumbnail.width)}
+                        height={String(authorInfo.thumbnail.height)}
                         heightAuto={true}
                      />
                   )}

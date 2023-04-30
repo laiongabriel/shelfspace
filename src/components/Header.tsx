@@ -74,7 +74,12 @@ function Header() {
    return (
       <header className={styles.header}>
          <div className={`${styles.headerContent} container`}>
-            <Link to="/" onClick={scrollToTop} className={styles.logo}></Link>
+            <Link
+               to="/"
+               onClick={scrollToTop}
+               className={styles.logo}
+               aria-label="Site logo"
+            ></Link>
             {mobile && (
                <button
                   className={`${styles.menuButton} ${
@@ -95,7 +100,7 @@ function Header() {
                <nav>
                   <ul className={styles.navList}>
                      <li>
-                        <Link to="/myshelf">My Shelf</Link>
+                        <Link to="/my-bookshelf">My Bookshelf</Link>
                      </li>
                      <li>
                         <Link to="/about">About</Link>
@@ -108,7 +113,7 @@ function Header() {
                      <input
                         type="text"
                         value={value}
-                        placeholder="Search for books or authors"
+                        placeholder="Search for books"
                         onChange={handleChange}
                      />
                      {loading && isResultOpen ? (
@@ -138,6 +143,7 @@ function Header() {
                                  <Image
                                     width="48px"
                                     height="72px"
+                                    heightAuto={true}
                                     alt={book.volumeInfo.title}
                                     src={`https://books.google.com/books/publisher/content/images/frontcover/${book.id}?fife=w48p-h72p`}
                                  />
@@ -158,7 +164,7 @@ function Header() {
                   ) : null}
                </div>
                <Link
-                  to={userName ? "/profile" : "/createprofile"}
+                  to={userName ? "/profile" : "/create-profile"}
                   className={styles.profile}
                >
                   {userName && (

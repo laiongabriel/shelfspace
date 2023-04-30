@@ -5,7 +5,7 @@ import Home from "./components/Home";
 import SearchResultPage from "./components/SearchResult";
 import BookPage from "./components/BookPage";
 import ScrollTop from "./components/helper/ScrollTop";
-import MyShelf from "./components/MyShelf";
+import MyBookshelf from "./components/MyBookshelf";
 import CreateProfile from "./components/profile/CreateProfile";
 import AuthorPage from "./components/AuthorPage";
 import NotFound from "./components/helper/NotFound";
@@ -24,8 +24,8 @@ function App() {
                   <Route path="/search" element={<SearchResultPage />} />
                   <Route path="/book/:bookId" element={<BookPage />} />
                   <Route path="/profile/*" element={<Profile />} />
-                  <Route path="/createprofile" element={<CreateProfile />} />
-                  <Route path="/myshelf" element={<MyShelf />} />
+                  <Route path="/create-profile" element={<CreateProfile />} />
+                  <Route path="/my-bookshelf" element={<MyBookshelf />} />
                   <Route path="/author/:authorName" element={<AuthorPage />} />
                   <Route path="*" element={<NotFound />} />
                </Routes>
