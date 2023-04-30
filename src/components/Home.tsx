@@ -33,7 +33,11 @@ function Home() {
                </button>
             </div>
 
-            <img src={HomeImg} alt="Young girl reading a book" />
+            <img
+               src={HomeImg}
+               alt="Young girl reading a book"
+               className={styles.homeImg}
+            />
          </div>
 
          <section
