@@ -13,7 +13,7 @@ body {
    font-family: $p-font, sans-serif;
    line-height: 1.5;
    -webkit-font-smoothing: antialiased;
-   padding-top: 59px;
+   padding-top: 60px;
    background-color: #fffefd;
 }
 
@@ -147,5 +147,11 @@ input::-webkit-file-upload-button {
    to {
       opacity: 1;
       transform: initial;
+   }
+}
+
+@media (max-width: 875px) {
+   body {
+      padding-top: 56px;
    }
 }
