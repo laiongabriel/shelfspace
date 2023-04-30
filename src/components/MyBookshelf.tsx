@@ -46,7 +46,7 @@ function MyBookshelf() {
          </h1>
          {!userName ? (
             <p>
-               <Link to="/createprofile" className={styles.createProfileLink}>
+               <Link to="/create-profile" className={styles.createProfileLink}>
                   Create a profile
                </Link>{" "}
                to start adding books!

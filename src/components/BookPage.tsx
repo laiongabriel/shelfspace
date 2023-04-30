@@ -81,7 +81,7 @@ function BookPage() {
                   ) : (
                      <p>
                         <Link
-                           to="/createprofile"
+                           to="/create-profile"
                            className={styles.createProfileLink}
                         >
                            Create a profile
