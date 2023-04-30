@@ -7,7 +7,7 @@ import BookPage from "./components/BookPage";
 import ScrollTop from "./components/helper/ScrollTop";
 import MyBookshelf from "./components/MyBookshelf";
 import CreateProfile from "./components/profile/CreateProfile";
-import AuthorPage from "./components/AuthorPage";
+import AuthorPage from "./components/author/AuthorPage";
 import NotFound from "./components/helper/NotFound";
 import Profile from "./components/profile/Profile";
 import Footer from "./components/Footer";
