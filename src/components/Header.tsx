@@ -11,25 +11,25 @@ import useMedia from "../hooks/useMedia";
 function Header() {
    const [value, setValue] = React.useState("");
    const [isResultOpen, setIsResultOpen] = React.useState(false);
-   const userName = window.localStorage.getItem("userName");
-   const userPicture = window.localStorage.getItem("userPicture");
-   const match = useMedia("(max-width: 950px)");
+   const [mobileMenu, setMobileMenu] = React.useState(false);
+   const mobile = useMedia("(max-width: 875px)");
+   const userName = localStorage.getItem("userName");
+   const userPicture = localStorage.getItem("userPicture");
    const navigate = useNavigate();
    const { pathname } = useLocation();
    const { request, loading, bookList, setBookList } = useFetch();
    const searchRef = React.useRef<HTMLDivElement>(null);
    const debounceTimer = React.useRef<ReturnType<typeof setTimeout>>();
 
-   console.log(match);
-
    React.useEffect(() => {
       if (pathname !== "/search") setValue("");
+      setMobileMenu(false);
    }, [pathname]);
 
-   function scrollToTop(): void {
+   function scrollToTop() {
       window.scrollTo({
-         top: 0,
          behavior: "smooth",
+         top: 0,
       });
    }
 
@@ -66,6 +66,7 @@ function Header() {
       e.preventDefault();
       if (value.length) {
          setIsResultOpen(false);
+         setMobileMenu(false);
          navigate(`/search?q=${value}`);
       }
    }
@@ -74,62 +75,90 @@ function Header() {
       <header className={styles.header}>
          <div className={`${styles.headerContent} container`}>
             <Link to="/" onClick={scrollToTop} className={styles.logo}></Link>
+            {mobile && (
+               <button
+                  className={`${styles.menuButton} ${
+                     mobileMenu && styles.mobileMenuActive
+                  }`}
+                  aria-label="Menu"
+                  onClick={() => setMobileMenu(!mobileMenu)}
+               ></button>
+            )}
 
-            <nav>
-               <ul className={styles.navList}>
-                  <li>
-                     <Link to="/myshelf">My Shelf</Link>
-                  </li>
-                  <li>
-                     <Link to="/about">About</Link>
-                  </li>
-               </ul>
-            </nav>
-
-            <div className={styles.search} ref={searchRef}>
-               <form onSubmit={handleSubmit}>
-                  <input
-                     type="text"
-                     value={value}
-                     placeholder="Search for books or authors"
-                     onChange={handleChange}
-                  />
-                  {loading && isResultOpen ? (
-                     <div className="loading-header"></div>
-                  ) : (
-                     <button aria-label="Search icon"></button>
-                  )}
-               </form>
-               {isResultOpen && bookList && value.length ? (
-                  <ul className={`${styles.searchResult} animeUpDown`}>
-                     {bookList.slice(0, 5).map((book) => (
-                        <li>
-                           <Link
-                              to={`/book/${book.id}`}
-                              className={styles.searchResultItem}
-                           >
-                              <Image
-                                 width="48px"
-                                 height="72px"
-                                 alt={book.volumeInfo.title}
-                                 src={`https://books.google.com/books/publisher/content/images/frontcover/${book.id}?fife=w48p-h72p`}
-                              />
-                              <div className={styles.searchResultItemInfo}>
-                                 <h3>{book.volumeInfo.title}</h3>
-                                 <span>by {book.volumeInfo.authors[0]}</span>
-                              </div>
-                           </Link>
-                        </li>
-                     ))}
-                     <button onClick={handleSubmit} className={styles.viewAll}>
-                        View all results ({bookList.length})
-                     </button>
+            <div
+               className={`${
+                  mobileMenu ? styles.navCenterMobile : styles.navCenter
+               }`}
+            >
+               <nav>
+                  <ul className={styles.navList}>
+                     <li>
+                        <Link to="/myshelf">My Shelf</Link>
+                     </li>
+                     <li>
+                        <Link to="/about">About</Link>
+                     </li>
                   </ul>
-               ) : null}
-            </div>
+               </nav>
 
-            <div className={styles.profile}>
-               <Link to={userName ? "/profile" : "/createprofile"}>
+               <div className={styles.search} ref={searchRef}>
+                  <form onSubmit={handleSubmit}>
+                     <input
+                        type="text"
+                        value={value}
+                        placeholder="Search for books or authors"
+                        onChange={handleChange}
+                     />
+                     {loading && isResultOpen ? (
+                        <div className="loading-header"></div>
+                     ) : (
+                        <button
+                           aria-label="Search icon"
+                           className={
+                              mobile && value
+                                 ? styles.closeSearchIcon
+                                 : styles.searchIcon
+                           }
+                           onClick={
+                              mobile && value ? () => setValue("") : undefined
+                           }
+                        ></button>
+                     )}
+                  </form>
+                  {isResultOpen && bookList && value.length ? (
+                     <ul className={`${styles.searchResult} animeUpDown`}>
+                        {bookList.slice(0, 5).map((book) => (
+                           <li key={book.id}>
+                              <Link
+                                 to={`/book/${book.id}`}
+                                 className={styles.searchResultItem}
+                              >
+                                 <Image
+                                    width="48px"
+                                    height="72px"
+                                    alt={book.volumeInfo.title}
+                                    src={`https://books.google.com/books/publisher/content/images/frontcover/${book.id}?fife=w48p-h72p`}
+                                 />
+                                 <div className={styles.searchResultItemInfo}>
+                                    <h3>{book.volumeInfo.title}</h3>
+                                    <span>by {book.volumeInfo.authors[0]}</span>
+                                 </div>
+                              </Link>
+                           </li>
+                        ))}
+                        <button
+                           onClick={handleSubmit}
+                           className={styles.viewAll}
+                        >
+                           View all results ({bookList.length})
+                        </button>
+                     </ul>
+                  ) : null}
+               </div>
+               <Link
+                  to={userName ? "/profile" : "/createprofile"}
+                  className={styles.profile}
+               >
                   {userName && (
                      <>
                         <img

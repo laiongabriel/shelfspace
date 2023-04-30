@@ -39,6 +39,7 @@ function AuthorPage() {
                      <Image
                         alt={authorInfo.title}
                         src={authorInfo.thumbnail.source}
+                        width={String(authorInfo.thumbnail.width)}
                         heightAuto={true}
                      />
                   )}

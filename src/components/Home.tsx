@@ -18,10 +18,10 @@ function Home() {
    }
 
    return (
-      <section>
+      <section className="animeLeft" style={{ animationDuration: "0.7s" }}>
          <Head title="Home" />
          <div className={styles.homeIntro}>
-            <div className={`${styles.homeIntroDesc} animeLeft`}>
+            <div className={`${styles.homeIntroDesc}`}>
                <h1>Welcome to ShelfSpace!</h1>
                <p>
                   Discover, organize, and access your favorite books with ease
@@ -33,11 +33,11 @@ function Home() {
                </button>
             </div>
 
-            <img src={HomeImg} alt="" className="animeUpDown" />
+            <img src={HomeImg} alt="Young girl reading a book" />
          </div>
 
          <section
-            className={`${styles.classicsListContainer} animeLeft`}
+            className={`${styles.classicsListContainer}`}
             ref={classicsDiv}
          >
             <div className={styles.classicsDesc}>

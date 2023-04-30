@@ -2,11 +2,6 @@ $p-font: Lexend;
 $h-font: Alice;
 $primary-color: #301e12;
 
-html {
-   scroll-behavior: smooth;
-   transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
 * {
    margin: 0;
    padding: 0;
@@ -18,14 +13,11 @@ body {
    font-family: $p-font, sans-serif;
    line-height: 1.5;
    -webkit-font-smoothing: antialiased;
-   padding-top: 58.5px;
+   padding-top: 59px;
    background-color: #fffefd;
 }
 
 main {
-   display: flex;
-   flex-direction: column;
-   flex: 1;
    min-height: calc(100vh - 59.38px);
 }
 
@@ -142,16 +134,16 @@ input::-webkit-file-upload-button {
 .animeUpDown {
    opacity: 0;
    transform: translateY(-20px);
-   animation: showUp 0.3s forwards;
+   animation: show 0.3s forwards;
 }
 
 .animeLeft {
    opacity: 0;
    transform: translateX(-20px);
-   animation: showUp 0.3s forwards;
+   animation: show 0.3s forwards;
 }
 
-@keyframes showUp {
+@keyframes show {
    to {
       opacity: 1;
       transform: initial;
