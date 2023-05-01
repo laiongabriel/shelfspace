@@ -8,23 +8,31 @@ import AuthorBooks from "./AuthorBooks";
 
 function AuthorPage() {
    const [authorInfo, setAuthorInfo] = React.useState<Author | null>(null);
+   const [error, setError] = React.useState("");
    const [loading, setLoading] = React.useState(false);
    const { authorName } = useParams();
 
    React.useEffect(() => {
       async function getAuthorInfo(authorName: string) {
-         setLoading(true);
-         const response = await fetch(
-            `https://en.wikipedia.org/api/rest_v1/page/summary/${authorName}`
-         );
-         const json: Author = await response.json();
-         setAuthorInfo(json);
-         setLoading(false);
+         try {
+            setLoading(true);
+            const response = await fetch(
+               `https://en.wikipedia.org/api/rest_v1/page/summary/${authorName}`
+            );
+            if (!response.ok) throw new Error("An error has occurred.");
+            const json: Author = await response.json();
+            setAuthorInfo(json);
+         } catch (error) {
+            if (error instanceof Error) setError(error.message);
+         } finally {
+            setLoading(false);
+         }
       }
       if (authorName) getAuthorInfo(authorName);
    }, [authorName]);
 
    if (loading) return <div className="loading"></div>;
+   if (error) return <p>{error}</p>;
    if (authorInfo?.title === "Not found.")
       return <p>This author does not exist in our database.</p>;
    return (

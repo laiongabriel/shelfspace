@@ -27,17 +27,14 @@ function SearchResult() {
                         alt={book.volumeInfo.title}
                         src={`https://books.google.com/books/publisher/content/images/frontcover/${book.id}?fife=w512-h512`}
                         width="128px"
-                        height="186px"
+                        heightAuto={true}
                         hover={true}
                      />
                   </Link>
                   <div className={styles.bookInfo}>
                      <Link to={`/book/${book.id}`} className={styles.bookTitle}>
                         {book.volumeInfo.subtitle ? (
-                           <h3>
-                              {book.volumeInfo.title}:{" "}
-                              {book.volumeInfo.subtitle}
-                           </h3>
+                           <h3>{book.volumeInfo.title}</h3>
                         ) : (
                            <h3>{book.volumeInfo.title}</h3>
                         )}

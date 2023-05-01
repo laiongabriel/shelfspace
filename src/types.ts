@@ -23,6 +23,7 @@ export interface UserBookList {
    title: string;
    image: string;
    author: string[];
+   toRead: boolean;
 }
 
 export interface Author {

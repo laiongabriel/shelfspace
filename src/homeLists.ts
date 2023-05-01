@@ -55,12 +55,12 @@ export const authorsList = [
       name: "William Shakespeare",
       image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Shakespeare.jpg/320px-Shakespeare.jpg",
       description:
-         'William Shakespeare was an English playwright and poet known for his profound influence on literature and theater. His works, such as "Hamlet" and "Romeo and Juliet," explored universal themes of love, tragedy, and human nature, making him an enduring cultural icon whose legacy continues to inspire writers and artists worldwide.',
+         'William Shakespeare, an English playwright and poet, had a profound impact on literature and theater. Through works like "Hamlet" and "Romeo and Juliet," he explored universal themes of love, tragedy, and human nature, making him a cultural icon whose legacy inspires creatives worldwide.',
    },
    {
       name: "Jane Austen",
       image: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS_Lyr6MbfmAr5xGpwfQ8b2SFwyndIqkxhkqGW91p6wC-_eL6aT",
       description:
-         'Jane Austen was an English novelist famous for her witty and insightful portrayals of the English upper-middle class during the late 18th and early 19th centuries. Her works, such as "Pride and Prejudice" and "Sense and Sensibility," are beloved for their enduring themes of love, marriage, and societal norms, and continue to inspire readers and writers worldwide.',
+         'Jane Austen was an English novelist famous for her witty and insightful portrayals of the English upper-middle class during the late 18th and early 19th centuries. Her works, such as "Pride and Prejudice" and "Sense and Sensibility," are beloved for their enduring themes of love, marriage, and societal norms.',
    },
 ];

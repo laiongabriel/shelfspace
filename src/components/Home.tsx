@@ -3,11 +3,13 @@ import styles from "../styles/Home.module.scss";
 import { Link } from "react-router-dom";
 import { classicsList, authorsList } from "../homeLists";
 import Image from "./helper/Image";
-import HomeImg from "../assets/img/home-img-test.svg";
+import HomeImg from "../assets/img/home-img.svg";
 import React from "react";
+import useMedia from "../hooks/useMedia";
 
 function Home() {
    const classicsDiv = React.useRef<HTMLDivElement>(null);
+   const match = useMedia("(max-width: 875px)");
 
    function handleExploreClick(e: React.MouseEvent<HTMLButtonElement>) {
       e.preventDefault();
@@ -24,9 +26,8 @@ function Home() {
             <div className={`${styles.homeIntroDesc}`}>
                <h1>Welcome to ShelfSpace!</h1>
                <p>
-                  Discover, organize, and access your favorite books with ease
-                  on your personal virtual bookshelf. Begin your reading journey
-                  today and take your literary experience to new heights!
+                  Discover, access and organize your favorite books with ease on
+                  your own virtual bookshelf. Begin your reading journey today!
                </p>
                <button className="button" onClick={handleExploreClick}>
                   Explore now!
@@ -93,7 +94,11 @@ function Home() {
                      <div className={styles.authorDesc}>
                         <h2>{author.name}</h2>
                         <p>{author.description}</p>
-                        <Link to={`/author/${author.name}`}>Read more</Link>
+                        <Link
+                           to={`/author/${author.name.replace(/\s+/g, "_")}`}
+                        >
+                           Read more
+                        </Link>
                      </div>
                   </li>
                ))}

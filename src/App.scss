@@ -13,7 +13,7 @@ body {
    font-family: $p-font, sans-serif;
    line-height: 1.5;
    -webkit-font-smoothing: antialiased;
-   padding-top: 60px;
+   padding-top: 56.78px;
    background-color: #fffefd;
 }
 
@@ -87,9 +87,9 @@ button {
 .button {
    all: unset;
    padding: 0.6rem 1.2rem;
+   border-radius: 4px;
    cursor: pointer;
    border: 2px solid rgba(31, 19, 11, 0.815);
-   background-color: rgba(248, 243, 213, 0.5);
    color: $primary-color;
    transition: 0.2s ease;
    &:hover {

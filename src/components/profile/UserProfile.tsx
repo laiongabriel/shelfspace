@@ -15,7 +15,7 @@ function UserProfile() {
    }, [navigate, userName]);
 
    return (
-      <section className="animeLeft">
+      <section className={`${styles.userProfile} animeLeft`}>
          <Head title={userName ? `${userName}'s profile` : "Profile"} />
          <div>
             <h1>{userName}</h1>
