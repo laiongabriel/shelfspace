@@ -1,5 +1,5 @@
 import styles from "../../styles/helper/Modal.module.scss";
-import DeleteIcon from "../../assets/img/icons/delete-icon.svg";
+import { ReactComponent as DeleteIcon } from "../../assets/img/icons/delete-icon.svg";
 import { ReactComponent as CloseIcon } from "../../assets/img/icons/close-search-icon.svg";
 import React from "react";
 
@@ -17,8 +17,11 @@ function Modal({ message, setModal, setConfirmDelete }: ModalProps) {
    return (
       <div className={styles.modal} onClick={handleOutsideClick}>
          <div className={styles.modalContent}>
-            <CloseIcon onClick={() => setModal(false)} />
-            <img src={DeleteIcon} alt="Delete icon" />
+            <CloseIcon
+               onClick={() => setModal(false)}
+               className={styles.closeIcon}
+            />
+            <DeleteIcon className={styles.deleteIcon} />
             <p>{message}</p>
             <div className={styles.modalButtons}>
                <button
