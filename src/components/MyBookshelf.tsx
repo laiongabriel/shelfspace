@@ -4,9 +4,16 @@ import Image from "./helper/Image";
 import styles from "../styles/MyBookshelf.module.scss";
 import { Link } from "react-router-dom";
 import Head from "./helper/Head";
+import Modal from "./helper/Modal";
 
 function MyBookshelf() {
    const [bookList, setBookList] = React.useState<UserBookList[] | null>(null);
+   const [modal, setModal] = React.useState(false);
+   const [confirmDelete, setConfirmDelete] = React.useState(false);
+   const [bookToDelete, setBookToDelete] = React.useState({
+      title: "",
+      id: "",
+   });
    const userName = localStorage.getItem("userName");
    const localList = localStorage.getItem("userBookList");
 
@@ -14,30 +21,37 @@ function MyBookshelf() {
       if (localList) setBookList(JSON.parse(localList));
    }, [localList]);
 
-   function removeFromList(id: string, title: string) {
-      if (bookList) {
-         const bookItem = document.getElementById(id);
-         if (
-            window.confirm(
-               `Are you sure you want to remove ${title} from your books?`
-            )
-         ) {
-            bookItem!.style.opacity = "0";
-            setTimeout(() => {
-               const updatedList = bookList.filter((book) => book.id !== id);
-               localStorage.setItem(
-                  "userBookList",
-                  JSON.stringify(updatedList)
-               );
-               setBookList(updatedList);
-            }, 400);
-         }
+   React.useEffect(() => {
+      if (confirmDelete) {
+         const bookItem = document.getElementById(bookToDelete.id);
+         bookItem!.style.opacity = "0";
+         setTimeout(() => {
+            const updatedList = bookList!.filter(
+               (book) => book.id !== bookToDelete.id
+            );
+            localStorage.setItem("userBookList", JSON.stringify(updatedList));
+            setBookList(updatedList);
+         }, 400);
+         setConfirmDelete(false);
+         setModal(false);
       }
+   }, [bookList, bookToDelete.id, confirmDelete]);
+
+   function handleRemoveBook(id: string, title: string) {
+      setBookToDelete({ id, title });
+      setModal(true);
    }
 
    return (
-      <section className={`${styles.myBookshelf} animeUpDown`}>
+      <section className={`${styles.myBookshelf}`}>
          <Head title="My Bookshelf" />
+         {modal && (
+            <Modal
+               message={`Are you sure you want to remove ${bookToDelete.title} from your bookshelf?`}
+               setModal={setModal}
+               setConfirmDelete={setConfirmDelete}
+            />
+         )}
          <h1>
             My Bookshelf{" "}
             {bookList && bookList?.length !== 0 && (
@@ -66,7 +80,7 @@ function MyBookshelf() {
                         />
                      </Link>
                      <button
-                        onClick={() => removeFromList(book.id, book.title)}
+                        onClick={() => handleRemoveBook(book.id, book.title)}
                      >
                         Remove
                      </button>
