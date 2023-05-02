@@ -52,44 +52,49 @@ function MyBookshelf() {
                setConfirmDelete={setConfirmDelete}
             />
          )}
-         <h1>
-            My Bookshelf{" "}
-            {bookList && bookList?.length !== 0 && (
-               <span className={styles.size}>({bookList?.length})</span>
+         <div className="animeLeft">
+            <h1>
+               My Bookshelf{" "}
+               {bookList && bookList?.length !== 0 && (
+                  <span className={styles.size}>({bookList?.length})</span>
+               )}
+            </h1>
+            {!userName ? (
+               <p>
+                  <Link
+                     to="/create-profile"
+                     className={styles.createProfileLink}
+                  >
+                     Create a profile
+                  </Link>{" "}
+                  to start adding books!
+               </p>
+            ) : bookList?.length ? (
+               <ul className={styles.bookList}>
+                  {bookList.map((book) => (
+                     <li key={book.id} className={styles.bookItem} id={book.id}>
+                        <Link to={`/book/${book.id}`}>
+                           <Image
+                              alt={book.title}
+                              src={book.image}
+                              width="128px"
+                              height="199px"
+                              heightAuto={true}
+                              hover={true}
+                           />
+                        </Link>
+                        <button
+                           onClick={() => handleRemoveBook(book.id, book.title)}
+                        >
+                           Remove
+                        </button>
+                     </li>
+                  ))}
+               </ul>
+            ) : (
+               <p>You don't have any books yet!</p>
             )}
-         </h1>
-         {!userName ? (
-            <p>
-               <Link to="/create-profile" className={styles.createProfileLink}>
-                  Create a profile
-               </Link>{" "}
-               to start adding books!
-            </p>
-         ) : bookList?.length ? (
-            <ul className={styles.bookList}>
-               {bookList.map((book) => (
-                  <li key={book.id} className={styles.bookItem} id={book.id}>
-                     <Link to={`/book/${book.id}`}>
-                        <Image
-                           alt={book.title}
-                           src={book.image}
-                           width="128px"
-                           height="199px"
-                           heightAuto={true}
-                           hover={true}
-                        />
-                     </Link>
-                     <button
-                        onClick={() => handleRemoveBook(book.id, book.title)}
-                     >
-                        Remove
-                     </button>
-                  </li>
-               ))}
-            </ul>
-         ) : (
-            <p>You don't have any books yet!</p>
-         )}
+         </div>
       </section>
    );
 }

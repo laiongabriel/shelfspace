@@ -46,8 +46,7 @@ function EditProfile() {
 
    function handleSubmit() {
       if (newUserName) localStorage.setItem("userName", newUserName);
-      else if (croppedPicture)
-         localStorage.setItem("userPicture", croppedPicture);
+      if (croppedPicture) localStorage.setItem("userPicture", croppedPicture);
       localStorage.setItem("userBio", newUserBio);
       navigate("/profile");
    }
@@ -62,42 +61,44 @@ function EditProfile() {
                setModal={setModal}
             />
          )}
-         <h1>Edit your profile</h1>
-         <label htmlFor="username">Username</label>
-         <input
-            type="text"
-            id="username"
-            maxLength={15}
-            defaultValue={userName!}
-            onChange={({ target }) => setNewUserName(target.value)}
-         />
-         <label htmlFor="bio">Bio</label>
-         <textarea
-            id="bio"
-            cols={50}
-            rows={7}
-            maxLength={600}
-            defaultValue={userBio ?? ""}
-            onChange={({ target }) => setNewUserBio(target.value)}
-         ></textarea>
+         <div className="animeLeft">
+            <h1>Edit your profile</h1>
+            <label htmlFor="username">Username</label>
+            <input
+               type="text"
+               id="username"
+               maxLength={15}
+               defaultValue={userName!}
+               onChange={({ target }) => setNewUserName(target.value)}
+            />
+            <label htmlFor="bio">Bio</label>
+            <textarea
+               id="bio"
+               cols={50}
+               rows={7}
+               maxLength={600}
+               defaultValue={userBio ?? ""}
+               onChange={({ target }) => setNewUserBio(target.value)}
+            ></textarea>
 
-         <img
-            src={croppedPicture || userPicture || NoPicture}
-            alt={userName!}
-            className={
-               croppedPicture || userPicture ? "userPicture" : "noPicture"
-            }
-         />
+            <img
+               src={croppedPicture || userPicture || NoPicture}
+               alt={userName!}
+               className={
+                  croppedPicture || userPicture ? "userPicture" : "noPicture"
+               }
+            />
 
-         <button disabled={!pictureExists} onClick={removePicture}>
-            remove picture
-         </button>
+            <button disabled={!pictureExists} onClick={removePicture}>
+               remove picture
+            </button>
 
-         <label>Select a new profile picture</label>
-         <input type="file" accept="image/*" onChange={handleImageChange} />
+            <label>Select a new profile picture</label>
+            <input type="file" accept="image/*" onChange={handleImageChange} />
 
-         <button onClick={handleSubmit}>Save changes</button>
-         <button onClick={() => setModal(true)}>Delete profile</button>
+            <button onClick={handleSubmit}>Save changes</button>
+            <button onClick={() => setModal(true)}>Delete profile</button>
+         </div>
       </section>
    );
 }

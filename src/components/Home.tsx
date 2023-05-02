@@ -5,11 +5,9 @@ import { classicsList, authorsList } from "../homeLists";
 import Image from "./helper/Image";
 import HomeImg from "../assets/img/home-img.svg";
 import React from "react";
-import useMedia from "../hooks/useMedia";
 
 function Home() {
    const classicsDiv = React.useRef<HTMLDivElement>(null);
-   const match = useMedia("(max-width: 875px)");
 
    function handleExploreClick(e: React.MouseEvent<HTMLButtonElement>) {
       e.preventDefault();

@@ -22,7 +22,7 @@ function Modal({ message, setModal, setConfirmDelete }: ModalProps) {
                className={styles.closeIcon}
             />
             <DeleteIcon className={styles.deleteIcon} />
-            <p>{message}</p>
+            {message}
             <div className={styles.modalButtons}>
                <button
                   onClick={() => setConfirmDelete(true)}

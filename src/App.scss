@@ -1,5 +1,5 @@
 $p-font: Lexend;
-$h-font: Alice;
+$h-font: Gentium Plus;
 $primary-color: #301e12;
 
 * {
@@ -42,7 +42,7 @@ p {
 h1,
 h2,
 h3 {
-   font-family: $h-font;
+   font-family: $h-font, sans-serif;
    color: $primary-color;
    line-height: 1.3;
 }
