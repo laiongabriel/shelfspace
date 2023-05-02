@@ -27,8 +27,6 @@ function BookPage() {
       }
    }, [bookId, localList]);
 
-   console.log(book);
-
    function toggleList() {
       const bookToAdd = {
          id: book?.id,

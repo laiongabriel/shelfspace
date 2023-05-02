@@ -18,20 +18,22 @@
    position: relative;
    display: grid;
    grid-template-columns: auto 1fr;
-   border: 2px solid #dbd6d3;
+   box-shadow: 0 0 4px rgba(139, 136, 124, 0.46);
+
    transition: all 0.3s ease-out;
+   background-color: #f7f5f4;
+   outline: 1px solid transparent;
 
    &:hover {
-      background-color: #ebebeb;
-      border-color: #b1aca9;
-      box-shadow: 0 0 4px rgba(139, 136, 124, 0.46);
+      background-color: #e4e4e4;
+      outline: 1px solid #83817f;
    }
 }
 
 .bookInfo {
    display: flex;
    flex-direction: column;
-   padding: 0.4rem 1.8rem 0.5rem 0.8rem;
+   padding: 0.5rem 1.8rem 0.5rem 0.8rem;
 }
 
 .bookTitle {
