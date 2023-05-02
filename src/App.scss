@@ -1,5 +1,5 @@
 $p-font: Lexend;
-$h-font: Jost;
+$h-font: Cabinet Grotesk;
 $primary-color: #301e12;
 
 * {
@@ -84,17 +84,22 @@ button {
    font: inherit;
 }
 
-.button {
-   all: unset;
-   padding: 0.6rem 1.2rem;
+@mixin button {
    cursor: pointer;
-   border: 2px solid rgba(31, 19, 11, 0.815);
-   color: $primary-color;
-   transition: 0.2s ease;
+   border-width: 0;
+   outline: none;
+   transition: 0.2s;
+   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.button {
+   @include button;
+   color: #fffefd;
+   background-color: #422a19;
+   padding: 0.65rem 1rem;
+
    &:hover {
-      background-color: #422a19;
-      border-color: #422a19;
-      color: #fffefd;
+      background-color: #6b4529;
    }
 }
 
@@ -151,6 +156,6 @@ input::-webkit-file-upload-button {
 
 @media (max-width: 875px) {
    body {
-      padding-top: 56px;
+      padding-top: 56.77px;
    }
 }

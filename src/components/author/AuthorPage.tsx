@@ -19,7 +19,10 @@ function AuthorPage() {
             const response = await fetch(
                `https://en.wikipedia.org/api/rest_v1/page/summary/${authorName}`
             );
-            if (!response.ok) throw new Error("An error has occurred.");
+            if (!response.ok)
+               throw new Error(
+                  "An error has occurred. This author probably does not exist in our database."
+               );
             const json: Author = await response.json();
             setAuthorInfo(json);
          } catch (error) {

@@ -132,6 +132,8 @@ function Header() {
                               >
                                  <Image
                                     width="48px"
+                                    height="73px"
+                                    heightAuto={true}
                                     alt={book.volumeInfo.title}
                                     src={`https://books.google.com/books/publisher/content/images/frontcover/${book.id}?fife=w48p-h72p`}
                                  />

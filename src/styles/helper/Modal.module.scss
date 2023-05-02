@@ -1,3 +1,5 @@
+@use "../../App" as App;
+
 .modal {
    position: fixed;
    inset: 0;
@@ -15,12 +17,15 @@
    display: grid;
    justify-items: center;
    align-items: center;
-   border-radius: 4px;
    padding: 1.5rem;
    text-align: center;
    background-color: #f8f3d5;
    box-shadow: 0 25px 50px -12px #00000040;
-   border: 2px solid #41291873;
+   border: 2px solid rgba(65, 41, 24, 0.5);
+
+   p {
+      max-width: 500px;
+   }
 }
 
 .deleteIcon {
@@ -61,24 +66,18 @@
 }
 
 .confirmButton {
+   @include App.button;
+   padding: 0.5rem 0.8rem;
    background-color: #ef4444;
    color: white;
-   cursor: pointer;
-   border-radius: 4px;
-   border: none;
-   padding: 0.5rem 0.8rem;
-   transition: 0.2s;
    &:hover {
       background-color: #dc2626;
    }
 }
 
 .cancelButton {
-   cursor: pointer;
-   border-radius: 4px;
-   border: 1px solid #949494;
+   @include App.button;
    padding: 0.5rem 0.8rem;
-   transition: 0.2s;
    &:hover {
       background-color: #d4d4d4;
    }
