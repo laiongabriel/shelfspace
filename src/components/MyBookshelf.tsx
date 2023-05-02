@@ -5,6 +5,7 @@ import styles from "../styles/MyBookshelf.module.scss";
 import { Link } from "react-router-dom";
 import Head from "./helper/Head";
 import Modal from "./helper/Modal";
+import { ReactComponent as RemoveIcon } from "../assets/img/icons/close-search-icon.svg";
 
 function MyBookshelf() {
    const [bookList, setBookList] = React.useState<UserBookList[] | null>(null);
@@ -37,7 +38,12 @@ function MyBookshelf() {
       }
    }, [bookList, bookToDelete.id, confirmDelete]);
 
-   function handleRemoveBook(id: string, title: string) {
+   function handleRemoveBook(
+      e: React.MouseEvent<SVGSVGElement>,
+      id: string,
+      title: string
+   ) {
+      e.preventDefault();
       setBookToDelete({ id, title });
       setModal(true);
    }
@@ -72,22 +78,35 @@ function MyBookshelf() {
             ) : bookList?.length ? (
                <ul className={styles.bookList}>
                   {bookList.map((book) => (
-                     <li key={book.id} className={styles.bookItem} id={book.id}>
-                        <Link to={`/book/${book.id}`}>
+                     <li key={book.id}>
+                        <Link
+                           id={book.id}
+                           to={`/book/${book.id}`}
+                           className={styles.bookItem}
+                        >
                            <Image
                               alt={book.title}
-                              src={book.image}
-                              width="128px"
-                              height="199px"
-                              heightAuto={true}
-                              hover={true}
+                              src={`https://books.google.com/books/publisher/content/images/frontcover/${book.id}?fife=200-h200`}
+                              width="80x"
+                              height="122px"
+                           />
+                           <div className={styles.bookInfo}>
+                              <h3 className={styles.bookTitle}>{book.title}</h3>
+                              <span className={styles.authorName}>
+                                 {book.author}
+                              </span>
+                              <span className={styles.pageCount}>
+                                 {book.pageCount} pages
+                              </span>
+                           </div>
+                           <RemoveIcon
+                              aria-label="Remove from bookshelf"
+                              className={styles.removeIcon}
+                              onClick={(e) =>
+                                 handleRemoveBook(e, book.id, book.title)
+                              }
                            />
                         </Link>
-                        <button
-                           onClick={() => handleRemoveBook(book.id, book.title)}
-                        >
-                           Remove
-                        </button>
                      </li>
                   ))}
                </ul>

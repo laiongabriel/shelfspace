@@ -23,7 +23,7 @@ export interface UserBookList {
    title: string;
    image: string;
    author: string[];
-   toRead: boolean;
+   pageCount: number;
 }
 
 export interface Author {

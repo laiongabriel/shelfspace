@@ -5,9 +5,9 @@ export const classicsList = [
       author: "Miguel Cervantes",
    },
    {
-      id: "z9IHEAAAQBAJ",
-      title: "Hamlet",
-      author: "William Shakespeare",
+      id: "1SNhEAAAQBAJ",
+      title: "Hour of the Star",
+      author: "Clarice Lispector",
    },
    {
       id: "oaAA9jRq9kkC",

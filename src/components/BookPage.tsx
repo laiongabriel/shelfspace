@@ -27,12 +27,15 @@ function BookPage() {
       }
    }, [bookId, localList]);
 
+   console.log(book);
+
    function toggleList() {
       const bookToAdd = {
          id: book?.id,
          title: book?.volumeInfo.title,
          image: book?.volumeInfo.imageLinks.thumbnail,
          author: book?.volumeInfo.authors,
+         pageCount: book?.volumeInfo.pageCount,
       };
       if (isOnList && localList) {
          const parsedLocalList: UserBookList[] = JSON.parse(localList);

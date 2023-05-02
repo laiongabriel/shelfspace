@@ -2,7 +2,6 @@
    display: grid;
 
    img {
-      border-radius: 4px;
       grid-area: 1/1;
       box-shadow: 0 1px 4px 0 rgba(60, 64, 67, 0.212),
          0 1px 3px 1px rgba(60, 64, 67, 0.15);
@@ -15,7 +14,7 @@
    outline: 2px solid transparent;
    &:hover {
       transform: translateY(-5px);
-      box-shadow: 0 1px 0.3rem rgba(77, 53, 37, 0.7);
+      box-shadow: 0 1px 0.6rem rgba(77, 53, 37, 0.7);
    }
 }
 

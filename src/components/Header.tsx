@@ -80,16 +80,6 @@ function Header() {
                className={styles.logo}
                aria-label="Site logo"
             ></Link>
-            {mobile && (
-               <button
-                  className={`${styles.menuButton} ${
-                     mobileMenu && styles.mobileMenuActive
-                  }`}
-                  aria-label="Menu"
-                  onClick={() => setMobileMenu(!mobileMenu)}
-               ></button>
-            )}
-
             <div
                className={`${
                   mobileMenu && mobile
@@ -142,8 +132,6 @@ function Header() {
                               >
                                  <Image
                                     width="48px"
-                                    height="72px"
-                                    heightAuto={true}
                                     alt={book.volumeInfo.title}
                                     src={`https://books.google.com/books/publisher/content/images/frontcover/${book.id}?fife=w48p-h72p`}
                                  />
@@ -184,6 +172,15 @@ function Header() {
                   {!userName && "Create profile"}
                </Link>
             </div>
+            {mobile && (
+               <button
+                  className={`${styles.menuButton} ${
+                     mobileMenu && styles.mobileMenuActive
+                  }`}
+                  aria-label="Menu"
+                  onClick={() => setMobileMenu(!mobileMenu)}
+               ></button>
+            )}
          </div>
       </header>
    );
