@@ -11,7 +11,9 @@ function BookPage() {
    const { request, loading, error, book } = useFetch();
    const [isOnList, setIsOnList] = React.useState(false);
    const userName = localStorage.getItem("userName");
-   const localList = localStorage.getItem("userBookList");
+   const localList: UserBookList[] = JSON.parse(
+      localStorage.getItem("userBookList")!
+   );
 
    React.useEffect(() => {
       request(undefined, undefined, bookId);
@@ -19,8 +21,7 @@ function BookPage() {
 
    React.useEffect(() => {
       if (localList) {
-         const parsedLocalList: UserBookList[] = JSON.parse(localList);
-         const bookOnList = parsedLocalList.some(
+         const bookOnList = localList.some(
             (userBook) => userBook.id === bookId
          );
          setIsOnList(bookOnList);
@@ -36,18 +37,16 @@ function BookPage() {
          pageCount: book?.volumeInfo.pageCount,
       };
       if (isOnList && localList) {
-         const parsedLocalList: UserBookList[] = JSON.parse(localList);
-         const updatedList = parsedLocalList.filter(
+         const updatedList = localList.filter(
             (userBook) => userBook.id !== bookId
          );
          localStorage.setItem("userBookList", JSON.stringify(updatedList));
          setIsOnList(false);
       } else {
          if (localList) {
-            const parsedLocalList: UserBookList[] = JSON.parse(localList);
             localStorage.setItem(
                "userBookList",
-               JSON.stringify([...parsedLocalList, bookToAdd])
+               JSON.stringify([...localList, bookToAdd])
             );
          } else {
             localStorage.setItem("userBookList", JSON.stringify([bookToAdd]));

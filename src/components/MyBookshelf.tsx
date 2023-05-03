@@ -94,7 +94,7 @@ function MyBookshelf() {
                            <div className={styles.bookInfo}>
                               <h3 className={styles.bookTitle}>{book.title}</h3>
                               <span className={styles.authorName}>
-                                 {book.author}
+                                 {book.author[0]}
                               </span>
                               <span className={styles.pageCount}>
                                  {book.pageCount} pages

@@ -55,6 +55,7 @@
 
 .closeIcon {
    fill: #412918 !important;
+   border-radius: 4px;
    cursor: pointer;
    width: 32px;
    height: 32px;
@@ -80,8 +81,9 @@
 
 .cancelButton {
    @include App.button;
+   background-color: white;
    padding: 0.5rem 0.8rem;
    &:hover {
-      background-color: #d4d4d4;
+      background-color: #f0f0f0;
    }
 }

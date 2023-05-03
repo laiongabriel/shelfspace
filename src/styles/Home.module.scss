@@ -1,4 +1,4 @@
-@use "../App.scss";
+@use "../App";
 
 .homeIntro {
    display: grid;
@@ -7,19 +7,30 @@
    align-items: center;
    gap: 5rem;
    margin: 6rem 0 9rem;
+}
 
-   .homeIntroDesc {
-      h1 {
-         font-size: 3rem;
-         margin-bottom: 0.2rem;
-      }
-      p {
-         margin-bottom: 2rem;
-      }
+.homeIntroDesc {
+   h1 {
+      font-size: 3rem;
+      margin-bottom: 0.2rem;
    }
+   p {
+      margin-bottom: 2rem;
+   }
+}
 
-   .homeImg {
-      margin-left: 0.5rem;
+.homeImg {
+   margin-left: 0.5rem;
+}
+
+.exploreNowButton {
+   @include App.button;
+   color: #fffefd;
+   background-color: #422a19;
+   padding: 0.65rem 1rem;
+
+   &:hover {
+      background-color: #6b4529;
    }
 }
 
@@ -34,22 +45,20 @@
    justify-content: center;
    flex-wrap: wrap;
    gap: 2.2rem;
-   margin-bottom: 6rem;
+   margin-bottom: 8rem;
 }
 
 .classicInfo {
-   width: 180px;
-   padding: 0.4rem;
+   h3 {
+      font-size: 1.1rem;
+   }
+   margin-top: 0.6rem;
    text-align: center;
-}
 
-.classicTitle {
-   font-size: 0.93rem;
-}
-
-.classicAuthor {
-   color: rgb(82, 82, 82);
-   font-size: 0.9rem;
+   p {
+      color: rgb(82, 82, 82);
+      font-size: 0.9rem;
+   }
 }
 
 .authorsDesc {
@@ -58,48 +67,24 @@
 }
 
 .authorsList {
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   gap: 2.5rem;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 2rem;
    justify-content: center;
    margin-bottom: 8rem;
 }
 
 .authorContent {
-   display: grid;
-   grid-template-columns: auto 1fr;
-   align-self: center;
-   gap: 1rem;
-
-   .authorDesc {
-      margin-top: 0.5rem;
+   width: fit-content;
+   text-align: center;
+   h3 {
+      margin-top: 0.6rem;
+      font-size: 1.1rem;
    }
 
    p {
-      margin-top: 0.2rem;
-      font-size: 0.96rem;
-   }
-
-   a {
-      margin-top: 0.5rem;
-      color: App.$primary-color;
-      position: relative;
-      &::before {
-         content: "";
-         width: 75px;
-         height: 2px;
-         bottom: 0;
-         background-color: App.$primary-color;
-         position: absolute;
-         transition: 0.3s;
-      }
-      &:hover::before {
-         width: 106px;
-         background-color: #72492b;
-      }
-      &:hover {
-         color: #72492b;
-      }
+      font-size: 0.9rem;
+      text-align: center;
    }
 }
 

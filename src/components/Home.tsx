@@ -24,10 +24,13 @@ function Home() {
             <div className={`${styles.homeIntroDesc}`}>
                <h1>Welcome to ShelfSpace!</h1>
                <p>
-                  Discover, access and organize your favorite books with ease on
+                  Discover, access and save your favorite books with ease on
                   your own virtual bookshelf. Begin your reading journey today!
                </p>
-               <button className="button" onClick={handleExploreClick}>
+               <button
+                  className={styles.exploreNowButton}
+                  onClick={handleExploreClick}
+               >
                   Explore now!
                </button>
             </div>
@@ -63,8 +66,8 @@ function Home() {
                            hover={true}
                         />
                         <div className={styles.classicInfo}>
-                           <p className={styles.classicTitle}>{book.title}</p>
-                           <p className={styles.classicAuthor}>{book.author}</p>
+                           <h3>{book.title}</h3>
+                           <p>{book.author}</p>
                         </div>
                      </Link>
                   </li>
@@ -83,21 +86,20 @@ function Home() {
 
             <ul className={styles.authorsList}>
                {authorsList.map((author) => (
-                  <li key={author.name} className={styles.authorContent}>
-                     <Image
-                        width="250px"
-                        src={author.image}
-                        alt={author.name}
-                     />
-                     <div className={styles.authorDesc}>
-                        <h2>{author.name}</h2>
+                  <li key={author.name}>
+                     <Link
+                        to={`/author/${author.name.replace(/\s+/g, "_")}`}
+                        className={styles.authorContent}
+                     >
+                        <Image
+                           hover={true}
+                           height="269px"
+                           src={author.image}
+                           alt={author.name}
+                        />
+                        <h3>{author.name}</h3>
                         <p>{author.description}</p>
-                        <Link
-                           to={`/author/${author.name.replace(/\s+/g, "_")}`}
-                        >
-                           Read more
-                        </Link>
-                     </div>
+                     </Link>
                   </li>
                ))}
             </ul>
@@ -105,7 +107,7 @@ function Home() {
 
          <section className={styles.readingContainer}>
             <div className={styles.readingDesc}>
-               <h1>The importance of reading</h1>
+               <h1>The importance of reading.</h1>
                <p>The benefits of losing yourself in a good book!</p>
             </div>
 
