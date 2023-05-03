@@ -21,6 +21,7 @@
    display: grid;
    grid-template-columns: auto 1fr;
    box-shadow: 0 0 4px rgba(139, 136, 124, 0.46);
+   border-radius: 4px;
 
    transition: all 0.3s ease-out;
    outline: 1px solid transparent;

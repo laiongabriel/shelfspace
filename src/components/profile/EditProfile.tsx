@@ -56,6 +56,7 @@ function EditProfile() {
          <Head title="Edit your profile" />
          {modal && (
             <Modal
+               title="Delete profile"
                message="All your books will be deleted! Are you sure?"
                setConfirmDelete={setConfirmDelete}
                setModal={setModal}

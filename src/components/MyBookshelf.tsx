@@ -53,6 +53,7 @@ function MyBookshelf() {
          <Head title="My Bookshelf" />
          {modal && (
             <Modal
+               title="Remove book"
                message={`Are you sure you want to remove ${bookToDelete.title} from your bookshelf?`}
                setModal={setModal}
                setConfirmDelete={setConfirmDelete}

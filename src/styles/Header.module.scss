@@ -59,6 +59,7 @@
 
       input {
          width: 100%;
+         border-radius: 4px;
          font-size: 0.9rem;
          border: 1px solid #cec7bc;
          background-color: #ffffff;
@@ -102,6 +103,7 @@
       position: absolute;
       z-index: 999;
       width: 100%;
+      border-radius: 0 0 4px 4px;
 
       background-color: #ffffff;
       border: 1px solid #dcd6cc;
