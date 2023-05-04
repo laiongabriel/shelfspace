@@ -11,6 +11,7 @@ import AuthorPage from "./components/author/AuthorPage";
 import NotFound from "./components/helper/NotFound";
 import Profile from "./components/profile/Profile";
 import Footer from "./components/Footer";
+import About from "./components/About";
 
 function App() {
    return (
@@ -21,6 +22,7 @@ function App() {
             <main>
                <Routes>
                   <Route path="/" element={<Home />} />
+                  <Route path="/about" element={<About />} />
                   <Route path="/search" element={<SearchResultPage />} />
                   <Route path="/book/:bookId" element={<BookPage />} />
                   <Route path="/profile/*" element={<Profile />} />

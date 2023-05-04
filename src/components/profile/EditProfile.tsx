@@ -77,7 +77,7 @@ function EditProfile() {
                id="bio"
                cols={50}
                rows={7}
-               maxLength={600}
+               maxLength={390}
                defaultValue={userBio ?? ""}
                onChange={({ target }) => setNewUserBio(target.value)}
             ></textarea>

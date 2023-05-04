@@ -1,14 +1,15 @@
 @use "../App.scss";
 
 .searchResult {
-   display: grid;
-   margin-top: 1.25rem;
-   gap: 1.25rem;
+   h1 {
+      margin: 1.2rem 0;
+   }
 }
 
 .book {
    display: flex;
    gap: 1.25rem;
+   margin-bottom: 1.2rem;
 }
 
 .bookTitle {

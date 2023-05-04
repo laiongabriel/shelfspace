@@ -2,6 +2,9 @@
 
 .userProfile {
    margin-top: 1.2rem;
+   display: grid;
+   grid-template-columns: 1.2fr 1fr;
+   justify-items: center;
 }
 
 .userIntro {
@@ -9,27 +12,86 @@
    grid-template-columns: auto 1fr;
    align-items: center;
    gap: 1.5rem;
+   margin-bottom: 2rem;
 }
 
 .userInfo {
-   display: grid;
-   gap: 0.2rem;
-
-   button {
-      @include App.button;
-      justify-self: start;
-      background-color: #422a19;
-      color: #fffefd;
-      padding: 0.3rem 0.6rem;
-
-      &:hover {
-         background-color: #6b4529;
+   h1 {
+      font-size: 2.2rem;
+      button {
+         all: unset;
+         cursor: pointer;
+         font-size: 0.8rem;
+         font-family: App.$p-font;
+         color: #004666;
+         &:hover {
+            text-decoration: underline;
+         }
       }
+   }
+
+   p {
+      margin-bottom: 0.2rem;
+   }
+}
+
+.bookNumber {
+   &:hover {
+      text-decoration: underline;
    }
 }
 
 .userStats {
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
+   gap: 0.5rem;
+}
+
+.userBio {
+   max-width: 572.72px;
+   h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.2rem;
+   }
+}
+
+.userProfileImage {
+   margin-top: 2rem;
+}
+
+@media (max-width: 1018px) {
+   .userProfile {
+      grid-template-columns: 1fr;
+      justify-items: initial;
+   }
+   .userProfileImage {
+      display: none;
+   }
+}
+
+@media (max-width: 600px) {
+   .userIntro {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+   }
+   .userInfo {
+      h1 {
+         display: grid;
+         button {
+            @include App.button;
+            font-size: 0.9rem;
+            color: #fffefd;
+            background-color: #422a19;
+            justify-self: center;
+            padding: 0.65rem 1rem;
+            margin: 0.5rem 0 0.8rem;
+            &:hover {
+               background-color: #6b4529;
+               text-decoration: initial;
+            }
+         }
+      }
+   }
 }

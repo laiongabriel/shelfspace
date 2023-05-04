@@ -17,6 +17,13 @@ function CreateProfile() {
    function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
       e.preventDefault();
       if (userName.length) {
+         const date = new Date();
+         const month = date.toLocaleString("default", { month: "long" });
+         const joined = {
+            month,
+            year: date.getFullYear(),
+         };
+         localStorage.setItem("joined", JSON.stringify(joined));
          localStorage.setItem("userName", userName);
          if (croppedPicture)
             localStorage.setItem("userPicture", croppedPicture);
@@ -52,7 +59,7 @@ function CreateProfile() {
             <textarea
                cols={50}
                rows={7}
-               maxLength={600}
+               maxLength={400}
                onChange={({ target }) => setUserBio(target.value)}
             ></textarea>
             <button>let's go</button>

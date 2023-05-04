@@ -16,10 +16,10 @@ function SearchResult() {
    if (loading) return <div className="loading"></div>;
    if (error || !bookList?.length) return <h1>Nothing found!</h1>;
    return (
-      <section className="animeUpDown">
+      <section className={`${styles.searchResult} animeUpDown`}>
          <Head title="Search result" />
          <h1>Search result</h1>
-         <ul className={styles.searchResult}>
+         <ul>
             {bookList?.map((book) => (
                <li key={book.id} className={styles.book}>
                   <Link to={`/book/${book.id}`}>

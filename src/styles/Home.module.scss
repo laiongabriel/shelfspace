@@ -46,6 +46,11 @@
    flex-wrap: wrap;
    gap: 2.2rem;
    margin-bottom: 8rem;
+   a {
+      &:hover .classicInfo h3 {
+         text-decoration: underline;
+      }
+   }
 }
 
 .classicInfo {
@@ -77,6 +82,9 @@
 .authorContent {
    width: fit-content;
    text-align: center;
+   &:hover h3 {
+      text-decoration: underline;
+   }
    h3 {
       margin-top: 0.6rem;
       font-size: 1.1rem;
