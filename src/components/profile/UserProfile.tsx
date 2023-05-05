@@ -60,11 +60,13 @@ function UserProfile() {
             </div>
 
             <div className={styles.userBio}>
-               {userBio && (
-                  <>
-                     <h2>About me</h2>
-                     <p>{userBio}</p>
-                  </>
+               <h2>About me</h2>
+               {userBio ? (
+                  <p>{userBio}</p>
+               ) : (
+                  <Link to="edit" className={styles.editBio}>
+                     (edit your bio)
+                  </Link>
                )}
             </div>
          </div>

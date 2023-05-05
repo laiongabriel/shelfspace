@@ -51,6 +51,19 @@
       font-size: 1.6rem;
       margin-bottom: 0.2rem;
    }
+   p {
+      line-height: 1.6;
+   }
+}
+
+.editBio {
+   font-size: 0.8rem;
+   font-weight: bold;
+   font-family: App.$p-font;
+   color: #004666;
+   &:hover {
+      text-decoration: underline;
+   }
 }
 
 .userProfileImage {
