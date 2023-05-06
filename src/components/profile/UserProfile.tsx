@@ -25,7 +25,7 @@ function UserProfile() {
    const match = useMedia("(max-width: 600px)");
 
    React.useEffect(() => {
-      if (!userName) navigate("/createprofile");
+      if (!userName) navigate("/create-profile");
       if (localList) setUserBookList(JSON.parse(localList));
    }, [localList, navigate, userName]);
 
@@ -48,7 +48,7 @@ function UserProfile() {
                      </button>
                   </h1>
                   <p>
-                     Joined in {joined.month} {joined.year}
+                     Joined in {joined?.month} {joined?.year}
                   </p>
                   <Link to="/my-bookshelf" className={styles.bookNumber}>
                      {userBookList?.length || 0}{" "}

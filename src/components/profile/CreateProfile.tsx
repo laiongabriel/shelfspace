@@ -33,7 +33,7 @@ function CreateProfile() {
    }
 
    return (
-      <section className="animeUpDown">
+      <section className={`${styles.createProfile} animeUpDown`}>
          <Head title="Create profile" />
          <h1>Join ShelfSpace!</h1>
          <form onSubmit={handleSubmit} className={styles.nameForm}>
