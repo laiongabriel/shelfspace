@@ -3,10 +3,12 @@ import React from "react";
 function useCropPicture() {
    const [croppedPicture, setCroppedPicture] = React.useState("");
    const [pictureExists, setPictureExists] = React.useState(false);
+   const [fileName, setFileName] = React.useState("");
 
    const handleImageChange = React.useCallback(
       ({ target }: React.ChangeEvent<HTMLInputElement>) => {
          if (target.files?.length) {
+            setFileName(target.files[0].name);
             const reader = new FileReader();
             reader.onload = () => {
                const base64Image = reader.result;
@@ -46,6 +48,7 @@ function useCropPicture() {
       setCroppedPicture,
       pictureExists,
       setPictureExists,
+      fileName,
    };
 }
 

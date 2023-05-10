@@ -1,3 +1,76 @@
+@use "../../App";
+
 .editProfile {
-   margin-top: 1.5rem;
+   margin: 1.5rem auto 0;
+   padding-bottom: 4rem;
+   max-width: 50rem;
+   h1 {
+      margin-bottom: 1.2rem;
+   }
+   input,
+   textarea {
+      margin-bottom: 1.5rem;
+   }
+}
+
+.profilePictureSection {
+   display: flex;
+   gap: 1.8rem;
+   margin-bottom: 1.5rem;
+
+   div {
+      display: flex;
+      gap: 1rem;
+      align-self: center;
+
+      label {
+         margin: 0;
+      }
+
+      button {
+         all: unset;
+         cursor: pointer;
+         &:hover {
+            text-decoration: underline;
+         }
+      }
+   }
+}
+
+.finalActions {
+   display: flex;
+   gap: 1rem;
+   margin-bottom: 5rem;
+}
+
+.saveChangesButton {
+   @include App.button;
+   font-size: 1rem;
+   padding: 0.4rem 0.8rem;
+   background-color: #422a19;
+   color: white;
+   &:hover {
+      background-color: #6b4529;
+   }
+}
+
+.deleteProfileButton {
+   @include App.button;
+   font-size: 1rem;
+   padding: 0.4rem 0.8rem;
+   background-color: #ef4444;
+   color: white;
+   &:hover {
+      background-color: #dc2626;
+   }
+}
+
+@media (max-width: 530px) {
+   .profilePictureSection {
+      flex-direction: column;
+
+      div {
+         align-self: flex-start;
+      }
+   }
 }

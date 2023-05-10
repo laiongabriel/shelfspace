@@ -7,7 +7,7 @@ import useCropPicture from "../../hooks/useCropPicture";
 function CreateProfile() {
    const [userName, setUserName] = React.useState("");
    const [userBio, setUserBio] = React.useState("");
-   const { handleImageChange, croppedPicture } = useCropPicture();
+   const { handleImageChange, croppedPicture, fileName } = useCropPicture();
    const navigate = useNavigate();
 
    React.useEffect(() => {
@@ -47,7 +47,16 @@ function CreateProfile() {
                className={styles.nameInput}
                placeholder="Enter your username"
             />
-            <label htmlFor="picture">Set your profile picture (optional)</label>
+
+            <p>Set your profile picture (optional)</p>
+
+            <div className={styles.uploadPicture}>
+               <label htmlFor="picture" className="file">
+                  Upload picture
+               </label>
+               {fileName && <p>{fileName}</p>}
+            </div>
+
             <input
                type="file"
                accept="image/*"
@@ -55,14 +64,11 @@ function CreateProfile() {
                onChange={handleImageChange}
                className={styles.fileInput}
             />
-            {/* {croppedPicture && (
-               <img src={croppedPicture} alt="" className="userPicture" />
-            )} */}
+
             <label htmlFor="bio">Bio (optional)</label>
             <textarea
                id="bio"
                rows={7}
-               maxLength={400}
                onChange={({ target }) => setUserBio(target.value)}
                placeholder="Write your bio"
                className={styles.bio}

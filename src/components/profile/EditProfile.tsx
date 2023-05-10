@@ -63,26 +63,9 @@ function EditProfile() {
             />
          )}
          <div className="animeLeft">
-            <div className="animeLeft">
-               <h1>Edit your profile</h1>
-               <label htmlFor="username">Username</label>
-               <input
-                  type="text"
-                  id="username"
-                  maxLength={15}
-                  defaultValue={userName!}
-                  onChange={({ target }) => setNewUserName(target.value)}
-               />
-               <label htmlFor="bio">Bio</label>
-               <textarea
-                  id="bio"
-                  cols={50}
-                  rows={7}
-                  maxLength={390}
-                  defaultValue={userBio ?? ""}
-                  onChange={({ target }) => setNewUserBio(target.value)}
-               ></textarea>
+            <h1>Edit your profile</h1>
 
+            <div className={styles.profilePictureSection}>
                <img
                   src={croppedPicture || userPicture || NoPicture}
                   alt={userName!}
@@ -91,19 +74,54 @@ function EditProfile() {
                   }
                />
 
-               <button disabled={!pictureExists} onClick={removePicture}>
-                  remove picture
+               <div>
+                  <label htmlFor="picture" className="file">
+                     Upload picture
+                  </label>
+                  <input
+                     id="picture"
+                     type="file"
+                     accept="image/*"
+                     onChange={handleImageChange}
+                  />
+
+                  <button disabled={!pictureExists} onClick={removePicture}>
+                     Remove picture
+                  </button>
+               </div>
+            </div>
+
+            <label htmlFor="username">Username</label>
+            <input
+               type="text"
+               id="username"
+               maxLength={15}
+               defaultValue={userName!}
+               onChange={({ target }) => setNewUserName(target.value)}
+               placeholder="Edit your username"
+            />
+            <label htmlFor="bio">Bio</label>
+            <textarea
+               id="bio"
+               rows={7}
+               defaultValue={userBio ?? ""}
+               onChange={({ target }) => setNewUserBio(target.value)}
+               placeholder="Edit your bio"
+            ></textarea>
+
+            <div className={styles.finalActions}>
+               <button
+                  onClick={handleSubmit}
+                  className={styles.saveChangesButton}
+               >
+                  Save changes
                </button>
-
-               <label>Select a new profile picture</label>
-               <input
-                  type="file"
-                  accept="image/*"
-                  onChange={handleImageChange}
-               />
-
-               <button onClick={handleSubmit}>Save changes</button>
-               <button onClick={() => setModal(true)}>Delete profile</button>
+               <button
+                  onClick={() => setModal(true)}
+                  className={styles.deleteProfileButton}
+               >
+                  Delete profile
+               </button>
             </div>
          </div>
       </section>
