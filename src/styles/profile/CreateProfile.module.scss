@@ -16,7 +16,7 @@
 
    button {
       @include App.button;
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 0.8rem;
       background-color: #422a19;
       color: white;
       &:hover {
