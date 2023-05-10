@@ -55,17 +55,17 @@
 
 .closeIcon {
    fill: #412918 !important;
-   border-radius: 4px;
+   border-radius: 50%;
    cursor: pointer;
-   width: 32px;
-   height: 32px;
+   width: 35px;
+   height: 35px;
    position: absolute;
    top: 5px;
    right: 5px;
    padding: 0.2rem;
-   transition: 0.3s;
+   transition: 0.2s;
    &:hover {
-      background-color: #c4c1a9;
+      background-color: #dbd8be;
    }
 }
 

@@ -1,7 +1,7 @@
 @use "../../App.scss";
 
 .userProfile {
-   margin-top: 1.2rem;
+   margin-top: 1.5rem;
    display: grid;
    grid-template-columns: 1.2fr 1fr;
    justify-items: center;
@@ -21,7 +21,7 @@
       button {
          all: unset;
          cursor: pointer;
-         font-size: 0.9rem;
+         font-size: 0.8rem;
          font-family: App.$p-font;
          color: #004666;
          &:hover {
@@ -57,7 +57,7 @@
 }
 
 .editBio {
-   font-size: 0.9rem;
+   font-size: 0.8rem;
    font-weight: bold;
    font-family: App.$p-font;
    color: #004666;

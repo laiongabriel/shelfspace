@@ -1,3 +1,26 @@
+@use "../../App";
+
 .createProfile {
-   margin-top: 1.2rem;
+   margin: 1.5rem auto 0;
+   max-width: 35rem;
+   h1 {
+      margin-bottom: 1rem;
+   }
+}
+
+.form {
+   input,
+   textarea {
+      margin-bottom: 1.5rem;
+   }
+
+   button {
+      @include App.button;
+      padding: 0.5rem 1rem;
+      background-color: #422a19;
+      color: white;
+      &:hover {
+         background-color: #6b4529;
+      }
+   }
 }

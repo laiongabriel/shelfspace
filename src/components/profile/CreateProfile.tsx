@@ -36,14 +36,16 @@ function CreateProfile() {
       <section className={`${styles.createProfile} animeUpDown`}>
          <Head title="Create profile" />
          <h1>Join ShelfSpace!</h1>
-         <form onSubmit={handleSubmit} className={styles.nameForm}>
-            <label htmlFor="username">How would you like to be called?</label>
+         <form onSubmit={handleSubmit} className={styles.form}>
+            <label htmlFor="username">How should we call you?</label>
             <input
                type="text"
                id="username"
                maxLength={15}
                required
                onChange={({ target }) => setUserName(target.value)}
+               className={styles.nameInput}
+               placeholder="Enter your username"
             />
             <label htmlFor="picture">Set your profile picture (optional)</label>
             <input
@@ -51,18 +53,21 @@ function CreateProfile() {
                accept="image/*"
                id="picture"
                onChange={handleImageChange}
+               className={styles.fileInput}
             />
-            {croppedPicture && (
+            {/* {croppedPicture && (
                <img src={croppedPicture} alt="" className="userPicture" />
-            )}
-            <label>Bio (optional)</label>
+            )} */}
+            <label htmlFor="bio">Bio (optional)</label>
             <textarea
-               cols={50}
+               id="bio"
                rows={7}
                maxLength={400}
                onChange={({ target }) => setUserBio(target.value)}
+               placeholder="Write your bio"
+               className={styles.bio}
             ></textarea>
-            <button>let's go</button>
+            <button>Submit</button>
          </form>
       </section>
    );

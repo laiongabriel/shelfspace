@@ -77,11 +77,69 @@ img {
 }
 
 input,
-textarea,
 button {
    display: block;
    box-sizing: border-box;
    font: inherit;
+}
+
+input[type="text"] {
+   width: 100%;
+   padding: 0.5rem;
+   border-color: transparent;
+   border-radius: 4px;
+   background-color: #f3f2f0;
+   transition: 0.3s;
+   &:focus {
+      outline: 0;
+      border: 2px solid #6b4529;
+   }
+}
+
+input[type="file"] {
+   margin-top: 0.2rem;
+   font-size: 1rem;
+   cursor: pointer;
+   &::-webkit-file-upload-button {
+      font: inherit;
+      cursor: pointer;
+      padding: 0.4rem 0.8rem;
+      background-color: #422a19;
+      color: white;
+      display: inline-block;
+      margin-right: 0.6rem;
+      border: 1px solid #e2e2e2;
+      border-radius: 4px;
+      transition: 0.2s;
+      &:hover {
+         background-color: #6b4529;
+      }
+   }
+}
+
+textarea {
+   width: 100%;
+   font: inherit;
+   padding: 0.5rem;
+   background-color: #f3f2f0;
+   border-radius: 4px;
+   border: 2px solid transparent;
+   resize: none;
+   transition: 0.2s;
+   &:focus {
+      border: 2px solid #6b4529;
+      outline: none;
+   }
+}
+
+input:-webkit-autofill {
+   -webkit-box-shadow: 0 0 0px 1000px #f3f2f0 inset;
+}
+
+label {
+   display: inline-block;
+   font-size: 1.1rem;
+   margin-bottom: 0.3rem;
 }
 
 @mixin button {
@@ -91,10 +149,6 @@ button {
    outline: none;
    transition: 0.2s;
    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-}
-
-input::-webkit-file-upload-button {
-   font: inherit;
 }
 
 .loading {
