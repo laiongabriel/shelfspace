@@ -98,11 +98,11 @@
 
 .readingContainer {
    margin-bottom: 12rem;
+}
 
-   .readingDesc {
-      text-align: center;
-      margin-bottom: 3.5rem;
-   }
+.readingDesc {
+   text-align: center;
+   margin-bottom: 3.5rem;
 }
 
 .readingList {
@@ -124,17 +124,64 @@
    .homeIntro {
       grid-template-columns: 1fr;
    }
+   .homeIntroDesc h1 {
+      font-size: 2.4rem;
+   }
    .homeImg {
       display: none;
    }
-   .authorsList {
-      grid-template-columns: 1fr;
-      gap: 3rem;
+   .classicsDesc {
+      h1 {
+         margin-bottom: 0.5rem;
+      }
    }
-   .authorContent {
-      grid-template-columns: 1fr;
+   .authorsList {
+      gap: 3rem;
    }
    .readingList {
       grid-template-columns: 1fr;
+   }
+}
+
+@media (max-width: 500px) {
+   .classicsDesc {
+      text-align: initial;
+      h1 {
+         font-size: 2.2rem;
+      }
+   }
+   .classicsList {
+      img {
+         width: 120px;
+         height: 184px;
+      }
+
+      h3 {
+         font-size: 0.9rem;
+      }
+
+      p {
+         font-size: 0.8rem;
+      }
+
+      .classicInfo {
+         max-width: 120px;
+      }
+   }
+
+   .authorsDesc {
+      text-align: initial;
+      h1 {
+         font-size: 2.2rem;
+         margin-bottom: 0.5rem;
+      }
+   }
+
+   .readingDesc {
+      text-align: initial;
+      h1 {
+         font-size: 2.2rem;
+         margin-bottom: 0.5rem;
+      }
    }
 }

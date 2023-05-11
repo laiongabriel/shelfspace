@@ -6,13 +6,33 @@ import useMedia from "../../hooks/useMedia";
 
 interface ModalProps {
    setModal: React.Dispatch<React.SetStateAction<boolean>>;
+   modal: boolean;
    setConfirmDelete: React.Dispatch<React.SetStateAction<boolean>>;
    message: string;
    title?: string;
 }
 
-function Modal({ message, title, setModal, setConfirmDelete }: ModalProps) {
+function Modal({
+   message,
+   title,
+   setModal,
+   modal,
+   setConfirmDelete,
+}: ModalProps) {
    const match = useMedia("(max-width: 875px)");
+
+   React.useEffect(() => {
+      function handleKeyDown(e: KeyboardEvent) {
+         if (e.key === "Escape") setModal(false);
+      }
+
+      if (modal) document.addEventListener("keydown", handleKeyDown);
+      else document.removeEventListener("keydown", handleKeyDown);
+
+      return () => {
+         document.removeEventListener("keydown", handleKeyDown);
+      };
+   }, [modal, setModal]);
 
    function handleOutsideClick(e: React.MouseEvent<HTMLDivElement>) {
       if (e.target === e.currentTarget) setModal(false);

@@ -2,7 +2,7 @@
 
 .editProfile {
    margin: 1.5rem auto 0;
-   padding-bottom: 4rem;
+   padding-bottom: 2rem;
    max-width: 50rem;
    h1 {
       margin-bottom: 1.2rem;
@@ -15,13 +15,13 @@
 
 .profilePictureSection {
    display: flex;
+   align-items: center;
    gap: 1.8rem;
    margin-bottom: 1.5rem;
 
    div {
       display: flex;
       gap: 1rem;
-      align-self: center;
 
       label {
          margin: 0;
@@ -68,9 +68,5 @@
 @media (max-width: 530px) {
    .profilePictureSection {
       flex-direction: column;
-
-      div {
-         align-self: flex-start;
-      }
    }
 }

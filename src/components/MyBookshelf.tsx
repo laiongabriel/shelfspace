@@ -56,6 +56,7 @@ function MyBookshelf() {
                title="Remove book"
                message={`Are you sure you want to remove ${bookToDelete.title} from your bookshelf?`}
                setModal={setModal}
+               modal={modal}
                setConfirmDelete={setConfirmDelete}
             />
          )}

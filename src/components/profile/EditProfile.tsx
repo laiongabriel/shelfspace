@@ -60,6 +60,7 @@ function EditProfile() {
                message="All your books will be deleted! Are you sure?"
                setConfirmDelete={setConfirmDelete}
                setModal={setModal}
+               modal={modal}
             />
          )}
          <div className="animeLeft">

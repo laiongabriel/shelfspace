@@ -12,6 +12,7 @@ export interface Book {
       publisher: string;
       publishedDate?: string;
       categories: string[];
+      averageRating: number;
       imageLinks: {
          thumbnail: string;
       };

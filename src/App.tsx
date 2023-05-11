@@ -2,7 +2,7 @@ import "./App.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/Home";
-import SearchResultPage from "./components/SearchResult";
+import SearchResults from "./components/SearchResults";
 import BookPage from "./components/BookPage";
 import ScrollTop from "./components/helper/ScrollTop";
 import MyBookshelf from "./components/MyBookshelf";
@@ -23,7 +23,7 @@ function App() {
                <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/about" element={<About />} />
-                  <Route path="/search" element={<SearchResultPage />} />
+                  <Route path="/search" element={<SearchResults />} />
                   <Route path="/book/:bookId" element={<BookPage />} />
                   <Route path="/profile/*" element={<Profile />} />
                   <Route path="/create-profile" element={<CreateProfile />} />

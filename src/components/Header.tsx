@@ -19,6 +19,7 @@ function Header() {
    const { pathname } = useLocation();
    const { request, loading, bookList, setBookList } = useFetch();
    const searchRef = React.useRef<HTMLDivElement>(null);
+   const mobileMenuRef = React.useRef<HTMLDivElement>(null);
    const debounceTimer = React.useRef<ReturnType<typeof setTimeout>>();
 
    React.useEffect(() => {
@@ -26,25 +27,31 @@ function Header() {
       setMobileMenu(false);
    }, [pathname]);
 
+   React.useEffect(() => {
+      function resultClickOutside(e: MouseEvent) {
+         if (!searchRef.current!.contains(e.target as Node)) {
+            setBookList(null);
+            setIsResultOpen(false);
+         }
+      }
+      document.addEventListener("click", resultClickOutside);
+   }, [setBookList]);
+
+   React.useEffect(() => {
+      function menuMobileClickOutside(e: MouseEvent) {
+         if (!mobileMenuRef.current!.contains(e.target as Node)) {
+            setMobileMenu(false);
+         }
+      }
+      document.addEventListener("click", menuMobileClickOutside);
+   }, []);
+
    function scrollToTop() {
       window.scrollTo({
          behavior: "smooth",
          top: 0,
       });
    }
-
-   React.useEffect(() => {
-      function handleOutsideClick(e: MouseEvent) {
-         if (!searchRef.current!.contains(e.target as Node)) {
-            setBookList(null);
-            setIsResultOpen(false);
-         }
-      }
-      document.addEventListener("click", handleOutsideClick);
-      return () => {
-         document.removeEventListener("click", handleOutsideClick);
-      };
-   }, [setBookList]);
 
    function handleChange({ target }: React.ChangeEvent<HTMLInputElement>) {
       setValue(target.value);
@@ -72,7 +79,7 @@ function Header() {
    }
 
    return (
-      <header className={styles.header}>
+      <header className={styles.header} ref={mobileMenuRef}>
          <div className={`${styles.headerContent} container`}>
             <Link
                to="/"
@@ -80,6 +87,7 @@ function Header() {
                className={styles.logo}
                aria-label="Site logo"
             ></Link>
+
             <div
                className={`${
                   mobileMenu && mobile
