@@ -95,6 +95,7 @@
          button {
             @include App.button;
             color: #fffefd;
+            font-size: 1rem;
             font-weight: normal;
             background-color: #422a19;
             justify-self: center;
