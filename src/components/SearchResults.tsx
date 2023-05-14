@@ -47,10 +47,10 @@ function SearchResults() {
                            .map((author) => author)
                            .join(", ")}
                      </p>
-                     <p>{book.volumeInfo.pageCount} pages</p>
                      <p>Published by {book.volumeInfo.publisher}</p>
+                     <p>{book.volumeInfo.pageCount} pages</p>
                      {book.volumeInfo.averageRating && (
-                        <p>Average rating: {book.volumeInfo.averageRating}</p>
+                        <p>{book.volumeInfo.averageRating} avg rating</p>
                      )}
                   </div>
                </li>

@@ -1,8 +1,11 @@
+@use "../App";
+
 .bookPageContainer {
    display: grid;
    grid-template-columns: minmax(auto, 228px) 1fr;
    gap: 2rem;
-   margin-top: 1rem;
+   margin-top: 1.4rem;
+   margin-bottom: 4rem;
 }
 
 .bookPageLeft {
@@ -11,8 +14,27 @@
    }
 }
 
+.bookPageRight {
+   h1 {
+      margin-bottom: 0.4rem;
+   }
+   h2 {
+      margin-bottom: 0.2rem;
+   }
+}
+
+.bookInfo {
+   display: grid;
+   gap: 0.3rem;
+   margin-bottom: 0.8rem;
+}
+
 .bookImage {
    margin-bottom: 1rem;
+}
+
+.createProfile {
+   margin-top: 0.5rem;
 }
 
 .createProfileLink {
@@ -25,10 +47,50 @@
 
 .bookActions {
    display: flex;
-   flex-direction: column;
-   gap: 0.5rem;
 
    button {
-      padding: 0.2rem 0.5rem;
+      cursor: pointer;
+      border-radius: 4px;
+      border-width: 0;
+      transition: 0.2s;
+      box-shadow: 0 1px 4px 0 rgba(60, 64, 67, 0.212),
+         0 1px 3px 1px rgba(60, 64, 67, 0.15);
+
+      display: flex;
+      gap: 0.3rem;
+      padding: 0.4rem;
+
+      svg {
+         width: 22px;
+         height: 22px;
+         fill: black !important;
+      }
+
+      span {
+         position: relative;
+         top: 1px;
+         align-self: center;
+         font-size: 0.95rem;
+      }
+   }
+}
+
+@media (max-width: 600px) {
+   .bookPageRight {
+      h1 {
+         text-align: center;
+         font-size: 1.8rem;
+      }
+   }
+   .bookInfo {
+      text-align: center;
+      margin-bottom: 2rem;
+   }
+   .bookPageContainer {
+      grid-template-columns: 1fr;
+   }
+
+   .bookActions {
+      justify-content: center;
    }
 }

@@ -5,6 +5,8 @@ import useFetch from "../hooks/useFetch";
 import styles from "../styles/BookPage.module.scss";
 import Image from "./helper/Image";
 import Head from "./helper/Head";
+import { ReactComponent as RemoveIcon } from "../assets/img/icons/close-search-icon.svg";
+import { ReactComponent as AddIcon } from "../assets/img/icons/add-icon.svg";
 
 function BookPage() {
    const { bookId } = useParams();
@@ -74,12 +76,20 @@ function BookPage() {
                <div className={styles.bookActions}>
                   {userName ? (
                      <button onClick={toggleList}>
-                        {isOnList
-                           ? "Remove from your shelf"
-                           : "Add to your shelf"}
+                        {isOnList ? (
+                           <>
+                              <RemoveIcon />
+                              <span>Remove from bookshelf</span>
+                           </>
+                        ) : (
+                           <>
+                              <AddIcon />
+                              <span>Add to bookshelf</span>
+                           </>
+                        )}
                      </button>
                   ) : (
-                     <p>
+                     <p className={styles.createProfile}>
                         <Link
                            to="/create-profile"
                            className={styles.createProfileLink}
@@ -99,23 +109,33 @@ function BookPage() {
                      : book.volumeInfo.title}
                </h1>
 
-               <div>
-                  by{" "}
-                  {book.volumeInfo.authors.map((author, index) => (
-                     <React.Fragment key={index}>
-                        <Link to={`/author/${author.replace(/\s+/g, "_")}`}>
-                           <span className={styles.authorName}>{author}</span>
-                        </Link>
-                        {index < book.volumeInfo.authors.length - 1 && ", "}
-                     </React.Fragment>
-                  ))}
+               <div className={styles.bookInfo}>
+                  <p>
+                     by{" "}
+                     {book.volumeInfo.authors.map((author, index) => (
+                        <React.Fragment key={index}>
+                           <Link to={`/author/${author.replace(/\s+/g, "_")}`}>
+                              <span className={styles.authorName}>
+                                 {author}
+                              </span>
+                           </Link>
+                           {index < book.volumeInfo.authors.length - 1 && ", "}
+                        </React.Fragment>
+                     ))}
+                  </p>
+                  <p>
+                     Published by {book.volumeInfo.publisher} in{" "}
+                     {book.volumeInfo.publishedDate?.replace(
+                        /^(\d{4}).*$/,
+                        "$1"
+                     )}
+                  </p>
+                  <p>{book.volumeInfo.pageCount} pages</p>
+                  {book.volumeInfo.averageRating && (
+                     <p>{book.volumeInfo.averageRating} average rating</p>
+                  )}
                </div>
 
-               <p>
-                  Published by {book.volumeInfo.publisher} in{" "}
-                  {book.volumeInfo.publishedDate?.replace(/^(\d{4}).*$/, "$1")}
-               </p>
-               <p>{book.volumeInfo.pageCount} pages</p>
                <h2>About this book</h2>
                <p
                   dangerouslySetInnerHTML={{
