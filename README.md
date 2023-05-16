@@ -1,6 +1,6 @@
 # ShelfSpace
 
-ShelfSpace is a React-based web application that serves as a virtual bookshelf, powered by the Google Books API. All data is stored in the browser's localStorage.
+ShelfSpace is a React-based web application that serves as a virtual bookshelf, powered by the Google Books API and Wikipedia API. All data is stored in the browser's localStorage.
 
 ## Preview
 
@@ -15,11 +15,13 @@ You can check out the website by clicking [here](https://shelf-space.netlify.app
 -  **Dynamic Search**: Search for books using the Google Books API.
 -  **Bookshelf Management**: Add and remove books from your personal bookshelf.
 -  **Book Details**: View comprehensive information about individual books.
--  **Author Details**: Access information about the authors of the books.
+-  **Author Details**: Access information about the authors of the books from Wikipedia.
 
 ## Technologies Used
 
 -  ReactJS
 -  TypeScript
+-  SASS
 -  Google Books API
+-  Wikipedia API
 -  Browser localstorage
