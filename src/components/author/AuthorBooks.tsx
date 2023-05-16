@@ -24,7 +24,7 @@ function AuthorBooks({ authorName }: { authorName: string }) {
                         <Link to={`/book/${book.id}`}>
                            <Image
                               alt={book.volumeInfo.title}
-                              src={`https://books.google.com/books/publisher/content/images/frontcover/${book.id}?fife=w128-h199`}
+                              src={`https://books.google.com/books/publisher/content/images/frontcover/${book.id}?fife=w500-h500`}
                               width="128px"
                               height="199px"
                               heightAuto={true}
