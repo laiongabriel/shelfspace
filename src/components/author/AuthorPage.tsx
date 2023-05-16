@@ -53,7 +53,7 @@ function AuthorPage() {
                         heightAuto={true}
                      />
                   )}
-                  <div className={styles.authorDesc}>
+                  <div>
                      <h1>{authorInfo.title}</h1>
                      <p>{authorInfo.description}</p>
                      <p>{authorInfo.extract}</p>

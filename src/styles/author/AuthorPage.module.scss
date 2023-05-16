@@ -17,15 +17,14 @@
 
 @media (max-width: 700px) {
    .authorContainer {
-      h1,
-      p {
-         text-align: center;
-      }
       h1 {
          font-size: 1.8rem;
       }
    }
    .authorInfo {
       grid-template-columns: 1fr;
+      p:first-child {
+         text-align: center;
+      }
    }
 }
