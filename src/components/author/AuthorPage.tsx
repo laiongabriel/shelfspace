@@ -12,8 +12,6 @@ function AuthorPage() {
    const [loading, setLoading] = React.useState(false);
    const { authorName } = useParams();
 
-   console.log(authorInfo);
-
    React.useEffect(() => {
       async function getAuthorInfo(authorName: string) {
          try {
