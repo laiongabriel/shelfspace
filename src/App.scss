@@ -71,7 +71,7 @@ a {
 
 img {
    display: block;
-
+   object-fit: cover;
    max-width: 100%;
 }
 
@@ -198,5 +198,11 @@ label {
 @media (max-width: 875px) {
    body {
       padding-top: 56.77px;
+   }
+}
+
+@media (max-width: 500px) {
+   footer p {
+      font-size: 1.02rem;
    }
 }

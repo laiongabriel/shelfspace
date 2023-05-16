@@ -1,13 +1,12 @@
 @use "../App.scss";
 
-.searchResults {
-   h1 {
-      margin: 1.4rem 0;
-   }
+.searchResults h1 {
+   margin: 1.4rem 0;
 }
 
 .book {
-   display: flex;
+   display: grid;
+   grid-template-columns: auto 1fr;
    gap: 1.25rem;
    margin-bottom: 1.2rem;
 }
@@ -23,4 +22,22 @@
 
 .bookInfo p {
    opacity: 0.8;
+}
+
+@media (max-width: 500px) {
+   .searchResults h1 {
+      font-size: 2rem;
+   }
+   .book {
+      h3 {
+         font-size: 1.2rem;
+      }
+      p {
+         font-size: 0.9rem;
+      }
+      img {
+         width: 87px;
+         height: 130px;
+      }
+   }
 }

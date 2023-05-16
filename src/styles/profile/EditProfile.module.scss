@@ -66,6 +66,9 @@
 }
 
 @media (max-width: 530px) {
+   .editProfile h1 {
+      text-align: center;
+   }
    .profilePictureSection {
       flex-direction: column;
    }

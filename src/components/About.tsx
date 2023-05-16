@@ -5,7 +5,7 @@ function About() {
    return (
       <section className={`${styles.about} animeLeft`}>
          <Head title="About" />
-         <h1>Soon</h1>
+         <p>Under development.</p>
       </section>
    );
 }

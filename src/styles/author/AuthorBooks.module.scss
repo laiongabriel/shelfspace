@@ -5,3 +5,10 @@
    margin-top: 0.8rem;
    gap: 1rem;
 }
+
+@media (max-width: 700px) {
+   .booksList {
+      justify-content: center;
+      gap: 1.5rem;
+   }
+}

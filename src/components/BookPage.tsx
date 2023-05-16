@@ -132,12 +132,13 @@ function BookPage() {
                   </p>
                   <p>{book.volumeInfo.pageCount} pages</p>
                   {book.volumeInfo.averageRating && (
-                     <p>{book.volumeInfo.averageRating} average rating</p>
+                     <p>Average rating: {book.volumeInfo.averageRating}</p>
                   )}
                </div>
 
                <h2>About this book</h2>
                <p
+                  className={styles.bookDescription}
                   dangerouslySetInnerHTML={{
                      __html: book.volumeInfo.description,
                   }}

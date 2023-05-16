@@ -135,9 +135,6 @@
          margin-bottom: 0.5rem;
       }
    }
-   .authorsList {
-      gap: 3rem;
-   }
    .readingList {
       grid-template-columns: 1fr;
    }
@@ -174,6 +171,24 @@
       h1 {
          font-size: 2.2rem;
          margin-bottom: 0.5rem;
+      }
+   }
+
+   .authorsList {
+      gap: 2.2rem;
+      li a {
+         width: 130px;
+      }
+
+      img {
+         height: 200px;
+      }
+   }
+
+   .authorContent {
+      h3,
+      p {
+         font-size: 0.9rem;
       }
    }
 
