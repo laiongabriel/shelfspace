@@ -6,7 +6,7 @@ function Footer() {
          <p>
             &copy; 2023 ShelfSpace - Developed by{" "}
             <a
-               href="https://laiongabriel.github.io/portfolio/en.html"
+               href="https://github.com/laiongabriel"
                target="_blank"
                rel="noreferrer"
             >
